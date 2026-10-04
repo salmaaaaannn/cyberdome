@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CYBERDOME Security Assessment</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="header">
+    <div class="brand">
+      <div class="brand-title">CYBERDOME</div>
+      <div class="brand-subtitle">Security Assessment</div>
+    </div>
+    <div class="header-actions">
+      <button id="rescanBtn" class="icon-btn" title="Re-scan current page">↻</button>
+      <button id="authToggleBtn" class="icon-btn" title="Authentication settings">⚙</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Target Domain Card -->
+    <div class="target-card">
+      <div class="target-label">INSPECTED TARGET</div>
+      <div id="targetDomain" class="target-domain">Loading target...</div>
+      <div id="targetUrl" class="target-url"></div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="state-container">
+      <div class="cyber-spinner"></div>
+      <div class="state-text">Assessing website security telemetry...</div>
+    </div>
+
+    <!-- Unavailable / Error Banner -->
+    <div id="unavailableBanner" class="alert-banner hidden">
+      <div class="alert-header">
+        <span class="alert-badge">SCAN UNAVAILABLE</span>
+      </div>
+      <div id="unavailableReason" class="alert-message">
+        CyberDome backend at http://localhost:8000 could not be reached. Ensure the FastAPI service is running.
+      </div>
+    </div>
+
+    <!-- Internal Browser Page Notice -->
+    <div id="internalPageBanner" class="alert-banner info hidden">
+      <div class="alert-header">
+        <span class="alert-badge info">BROWSER INTERNAL PAGE</span>
+      </div>
+      <div class="alert-message">
+        Security scanning is not applicable to browser internal schemes.
+      </div>
+    </div>
+
+    <!-- Assessment Result Card -->
+    <div id="assessmentContainer" class="assessment-container hidden">
+      <!-- Score & Baseline Hero -->
+      <div class="hero-card">
+        <div class="score-block">
+          <span id="scoreValue" class="score-number">--</span>
+          <span class="score-denominator">/ 100</span>
+        </div>
+        <div id="baselineBadge" class="baseline-badge">UNKNOWN</div>
+      </div>
+
+      <!-- Severity Findings Counter -->
+      <div class="severity-grid">
+        <div class="severity-pill critical" id="pillCritical">
+          <span class="sev-label">CRITICAL</span>
+          <span id="countCritical" class="sev-count">0</span>
+        </div>
+        <div class="severity-pill high" id="pillHigh">
+          <span class="sev-label">HIGH</span>
+          <span id="countHigh" class="sev-count">0</span>
+        </div>
+        <div class="severity-pill medium" id="pillMedium">
+          <span class="sev-label">MEDIUM</span>
+          <span id="countMedium" class="sev-count">0</span>
+        </div>
+        <div class="severity-pill low" id="pillLow">
+          <span class="sev-label">LOW</span>
+          <span id="countLow" class="sev-count">0</span>
+        </div>
+      </div>
+
+      <!-- Telemetry Highlights Grid -->
+      <div class="telemetry-grid">
+        <div class="telemetry-item">
+          <span class="telemetry-key">PROTOCOL</span>
+          <span id="protocolVal" class="telemetry-val">--</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-key">VERDICT</span>
+          <span id="verdictVal" class="telemetry-val">--</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-key">MODE</span>
+          <span id="modeVal" class="telemetry-val">AUTOMATIC</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-key">SOURCE</span>
+          <span id="sourceVal" class="telemetry-val">EXTENSION</span>
+        </div>
+      </div>
+
+      <!-- Details Toggle Button -->
+      <div class="details-toggle-row">
+        <button id="toggleDetailsBtn" class="toggle-btn">
+          <span id="toggleDetailsLabel">VIEW DETAILS</span>
+          <span id="toggleDetailsArrow">▼</span>
+        </button>
+      </div>
+
+      <!-- Collapsible Detailed Findings -->
+      <div id="findingsDrawer" class="findings-drawer hidden">
+        <div id="findingsList" class="findings-list">
+          <!-- Dynamically populated finding cards -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Drawer (Collapsible) -->
+    <div id="authDrawer" class="auth-drawer hidden">
+      <div class="auth-header">CYBERDOME BACKEND AUTH</div>
+      <div class="auth-desc">Enter your user JWT token to associate scans with your account and access enterprise fusion:</div>
+      <input type="password" id="jwtTokenInput" placeholder="eyJhbGciOi..." class="cyber-input" />
+      <div class="auth-btn-row">
+        <button id="saveTokenBtn" class="primary-btn">Save Token</button>
+        <button id="clearTokenBtn" class="secondary-btn">Clear</button>
+      </div>
+      <div id="authStatusMsg" class="auth-status"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span id="footerTimestamp">Live Protection Active</span>
+    <span id="cacheIndicator" class="cache-tag hidden">CACHED</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

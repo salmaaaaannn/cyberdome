@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CYBERDOME Multi-Model Detection Fusion Evidence & Assessment Schema",
+  "version": "fusion-v1",
+  "definitions": {
+    "EvidenceSource": {
+      "type": "string",
+      "enum": [
+        "NETWORK",
+        "IOT",
+        "UEBA",
+        "URL",
+        "THREAT_INTELLIGENCE",
+        "WEB_SCANNER",
+        "SECURITY_RULE"
+      ]
+    },
+    "UnifiedVerdict": {
+      "type": "string",
+      "enum": [
+        "BENIGN",
+        "LOW_CONFIDENCE",
+        "SUSPICIOUS",
+        "HIGH_CONFIDENCE_THREAT",
+        "CRITICAL_THREAT",
+        "UNKNOWN"
+      ]
+    },
+    "SeverityLevel": {
+      "type": "string",
+      "enum": [
+        "INFO",
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "DetectionEvidence": {
+      "type": "object",
+      "required": [
+        "source",
+        "entity_type",
+        "entity_id",
+        "company_id",
+        "verdict",
+        "severity",
+        "confidence"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "source": { "$ref": "#/definitions/EvidenceSource" },
+        "entity_type": { "type": "string" },
+        "entity_id": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "company_id": { "type": "string" },
+        "user_id": { "type": ["string", "null"] },
+        "device_id": { "type": ["string", "null"] },
+        "ip_address": { "type": ["string", "null"] },
+        "verdict": { "type": "string" },
+        "is_threat": { "type": "boolean" },
+        "severity": { "$ref": "#/definitions/SeverityLevel" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "anomaly_score": { "type": ["number", "null"] },
+        "model_version": { "type": ["string", "null"] },
+        "raw_evidence": { "type": "object" },
+        "environment": { "type": "string", "enum": ["REAL", "SIMULATION"] },
+        "source_event_id": { "type": ["string", "null"] }
+      }
+    },
+    "FusionAssessment": {
+      "type": "object",
+      "required": [
+        "id",
+        "company_id",
+        "verdict",
+        "severity",
+        "confidence",
+        "uncertainty",
+        "sources_present",
+        "sources_missing",
+        "threat_sources",
+        "benign_sources",
+        "reason_codes",
+        "explanation",
+        "evaluated_at"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "company_id": { "type": "string" },
+        "verdict": { "$ref": "#/definitions/UnifiedVerdict" },
+        "severity": { "$ref": "#/definitions/SeverityLevel" },
+        "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "uncertainty": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "environment": { "type": "string", "enum": ["REAL", "SIMULATION"] },
+        "sources_present": { "type": "array", "items": { "type": "string" } },
+        "sources_missing": { "type": "array", "items": { "type": "string" } },
+        "threat_sources": { "type": "array", "items": { "type": "string" } },
+        "benign_sources": { "type": "array", "items": { "type": "string" } },
+        "primary_entity": { "type": "object" },
+        "correlated_entities": { "type": "array", "items": { "type": "object" } },
+        "attack_chain": { "type": "array", "items": { "type": "object" } },
+        "reason_codes": { "type": "array", "items": { "type": "string" } },
+        "explanation": { "type": "string" },
+        "evaluated_at": { "type": "string", "format": "date-time" },
+        "security_event_id": { "type": ["string", "null"] },
+        "incident_id": { "type": ["string", "null"] },
+        "model_version": { "type": "string" }
+      }
+    }
+  }
+}

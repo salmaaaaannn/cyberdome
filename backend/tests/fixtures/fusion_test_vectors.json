@@ -1,0 +1,586 @@
+[
+  {
+    "id": "v01_all_benign",
+    "name": "All Benign Telemetry",
+    "expected_verdict": "BENIGN",
+    "expected_severity": "INFO",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "srv-app-01",
+        "company_id": "comp-test-01",
+        "verdict": "BENIGN",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.98
+      },
+      {
+        "source": "IOT",
+        "entity_type": "IOT_DEVICE",
+        "entity_id": "sensor-temp-04",
+        "company_id": "comp-test-01",
+        "verdict": "BENIGN_IOT",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.95
+      },
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "alice.smith",
+        "company_id": "comp-test-01",
+        "verdict": "BENIGN_USER",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.94
+      },
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "https://www.google.com/search",
+        "company_id": "comp-test-01",
+        "verdict": "SAFE",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.96
+      }
+    ]
+  },
+  {
+    "id": "v02_network_only_anomaly",
+    "name": "Network Only Anomaly",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "srv-db-02",
+        "company_id": "comp-test-01",
+        "verdict": "NETWORK_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.76
+      },
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "https://company-portal.internal",
+        "company_id": "comp-test-01",
+        "verdict": "SAFE",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.92
+      }
+    ]
+  },
+  {
+    "id": "v03_iot_only_anomaly",
+    "name": "IoT Only Anomaly",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "IOT",
+        "entity_type": "IOT_DEVICE",
+        "entity_id": "cam-gate-01",
+        "company_id": "comp-test-01",
+        "verdict": "IOT_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.74
+      }
+    ]
+  },
+  {
+    "id": "v04_ueba_only_anomaly",
+    "name": "UEBA Only Anomaly",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "bob.contractor",
+        "company_id": "comp-test-01",
+        "verdict": "UEBA_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.78
+      }
+    ]
+  },
+  {
+    "id": "v05_url_only_threat",
+    "name": "URL Only Threat",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "http://suspicious-billing-update.top/login",
+        "company_id": "comp-test-01",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.75
+      }
+    ]
+  },
+  {
+    "id": "v06_network_plus_ueba",
+    "name": "Network Plus UEBA Correlated Threat",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "workstation-102",
+        "company_id": "comp-test-01",
+        "user_id": "user-charlie",
+        "ip_address": "10.0.1.45",
+        "verdict": "CLASSIFIED_ATTACK",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.88
+      },
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "user-charlie",
+        "company_id": "comp-test-01",
+        "user_id": "user-charlie",
+        "ip_address": "10.0.1.45",
+        "verdict": "CLASSIFIED_INSIDER_THREAT",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.89
+      }
+    ]
+  },
+  {
+    "id": "v07_network_plus_url",
+    "name": "Network Plus URL Correlated Threat",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "gateway-01",
+        "company_id": "comp-test-01",
+        "ip_address": "198.51.100.22",
+        "verdict": "CLASSIFIED_ATTACK",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.85
+      },
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "http://bank-security-alert-update.com/login",
+        "company_id": "comp-test-01",
+        "ip_address": "198.51.100.22",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.91
+      }
+    ]
+  },
+  {
+    "id": "v08_iot_plus_network",
+    "name": "IoT Plus Network Correlated Threat",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "IOT",
+        "entity_type": "IOT_DEVICE",
+        "entity_id": "sensor-grid-09",
+        "company_id": "comp-test-01",
+        "device_id": "sensor-grid-09",
+        "ip_address": "10.0.10.15",
+        "verdict": "CLASSIFIED_IOT_ATTACK",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.87
+      },
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "sensor-grid-09",
+        "company_id": "comp-test-01",
+        "ip_address": "10.0.10.15",
+        "verdict": "NETWORK_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.84
+      }
+    ]
+  },
+  {
+    "id": "v09_ueba_plus_url",
+    "name": "UEBA Plus URL Correlated Threat",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "http://credential-harvest-service.top/auth",
+        "company_id": "comp-test-01",
+        "user_id": "user-dave",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.92
+      },
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "user-dave",
+        "company_id": "comp-test-01",
+        "user_id": "user-dave",
+        "verdict": "CONFIRMED_INSIDER_THREAT",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.86
+      }
+    ]
+  },
+  {
+    "id": "v10_network_iot_ueba",
+    "name": "Network Plus IoT Plus UEBA Threat",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "core-switch-01",
+        "company_id": "comp-test-01",
+        "verdict": "CLASSIFIED_ATTACK",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.89
+      },
+      {
+        "source": "IOT",
+        "entity_type": "IOT_DEVICE",
+        "entity_id": "smart-lock-main",
+        "company_id": "comp-test-01",
+        "verdict": "CLASSIFIED_IOT_ATTACK",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.88
+      },
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "eve.admin",
+        "company_id": "comp-test-01",
+        "verdict": "CONFIRMED_INSIDER_THREAT",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.90
+      }
+    ]
+  },
+  {
+    "id": "v11_all_four_malicious",
+    "name": "All Four Modules Malicious Coordinated Attack",
+    "expected_verdict": "CRITICAL_THREAT",
+    "expected_severity": "CRITICAL",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "edge-router-01",
+        "company_id": "comp-test-01",
+        "verdict": "CONFIRMED_ATTACK",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 0.96
+      },
+      {
+        "source": "IOT",
+        "entity_type": "IOT_DEVICE",
+        "entity_id": "factory-plc-01",
+        "company_id": "comp-test-01",
+        "verdict": "CONFIRMED_IOT_ATTACK",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 0.94
+      },
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "compromised.admin",
+        "company_id": "comp-test-01",
+        "verdict": "CONFIRMED_INSIDER_THREAT",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 0.95
+      },
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "http://malware-payload-staging.com/dropper.exe",
+        "company_id": "comp-test-01",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 0.98
+      }
+    ]
+  },
+  {
+    "id": "v12_threat_intelligence_confirmation",
+    "name": "Threat Intelligence Confirmation Precedence",
+    "expected_verdict": "CRITICAL_THREAT",
+    "expected_severity": "CRITICAL",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "THREAT_INTELLIGENCE",
+        "entity_type": "DOMAIN",
+        "entity_id": "c2-stealth-beacon.online",
+        "company_id": "comp-test-01",
+        "verdict": "KNOWN_MALICIOUS",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 1.0
+      },
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "proxy-srv-01",
+        "company_id": "comp-test-01",
+        "verdict": "BENIGN",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "id": "v13_scanner_confirmation",
+    "name": "Scanner Confirmation of Single Detector",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "http://unverified-login.top/account",
+        "company_id": "comp-test-01",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.82
+      },
+      {
+        "source": "WEB_SCANNER",
+        "entity_type": "DOMAIN",
+        "entity_id": "unverified-login.top",
+        "company_id": "comp-test-01",
+        "verdict": "PHISHING_INDICATORS_DETECTED",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.88
+      }
+    ]
+  },
+  {
+    "id": "v14_conflicting_evidence",
+    "name": "Conflicting Evidence (1 Threat + 2 Benign)",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "host-workstation-09",
+        "company_id": "comp-test-01",
+        "verdict": "NETWORK_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.72
+      },
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "https://www.google.com",
+        "company_id": "comp-test-01",
+        "verdict": "SAFE",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.98
+      },
+      {
+        "source": "UEBA",
+        "entity_type": "USER",
+        "entity_id": "user.standard",
+        "company_id": "comp-test-01",
+        "verdict": "BENIGN_USER",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "id": "v15_missing_evidence",
+    "name": "Missing Evidence (Only Network Available)",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "srv-api-01",
+        "company_id": "comp-test-01",
+        "verdict": "NETWORK_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.70
+      }
+    ]
+  },
+  {
+    "id": "v16_duplicate_event",
+    "name": "Duplicate Event ID Submission",
+    "expected_verdict": "HIGH_CONFIDENCE_THREAT",
+    "expected_severity": "HIGH",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "id": "fixed-dup-uuid-001",
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "dmz-proxy",
+        "company_id": "comp-test-01",
+        "verdict": "CLASSIFIED_ATTACK",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.88
+      },
+      {
+        "id": "fixed-dup-uuid-002",
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "http://phish-update-security.xyz",
+        "company_id": "comp-test-01",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.89
+      }
+    ]
+  },
+  {
+    "id": "v17_same_event_repeated",
+    "name": "Same Event Repeated Three Times",
+    "expected_verdict": "SUSPICIOUS",
+    "expected_severity": "MEDIUM",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "IOT",
+        "entity_type": "IOT_DEVICE",
+        "entity_id": "hvac-controller-01",
+        "company_id": "comp-test-01",
+        "verdict": "IOT_ANOMALY",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.72
+      }
+    ]
+  },
+  {
+    "id": "v18_cross_company_event",
+    "name": "Cross-Company Evidence Ingestion (Should Reject)",
+    "expected_verdict": "REJECT_CROSS_TENANT",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "NETWORK",
+        "entity_type": "ASSET",
+        "entity_id": "asset-a",
+        "company_id": "comp-company-a",
+        "verdict": "BENIGN",
+        "is_threat": false,
+        "severity": "INFO",
+        "confidence": 0.90
+      },
+      {
+        "source": "URL",
+        "entity_type": "URL",
+        "entity_id": "https://malicious.corp",
+        "company_id": "comp-company-b",
+        "verdict": "DANGEROUS",
+        "is_threat": true,
+        "severity": "HIGH",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "id": "v19_real_event",
+    "name": "REAL Environment Threat Event",
+    "expected_verdict": "CRITICAL_THREAT",
+    "expected_severity": "CRITICAL",
+    "environment": "REAL",
+    "evidence_items": [
+      {
+        "source": "THREAT_INTELLIGENCE",
+        "entity_type": "DOMAIN",
+        "entity_id": "malware-payload-staging.com",
+        "company_id": "comp-test-01",
+        "verdict": "KNOWN_MALICIOUS",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 1.0,
+        "environment": "REAL"
+      }
+    ]
+  },
+  {
+    "id": "v20_simulation_event",
+    "name": "SIMULATION Environment Threat Event",
+    "expected_verdict": "CRITICAL_THREAT",
+    "expected_severity": "CRITICAL",
+    "environment": "SIMULATION",
+    "evidence_items": [
+      {
+        "source": "THREAT_INTELLIGENCE",
+        "entity_type": "DOMAIN",
+        "entity_id": "phish-update-security.xyz",
+        "company_id": "comp-test-01",
+        "verdict": "KNOWN_MALICIOUS",
+        "is_threat": true,
+        "severity": "CRITICAL",
+        "confidence": 1.0,
+        "environment": "SIMULATION"
+      }
+    ]
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "module": "iot_anomaly_detection",
+  "version": "iot-anomaly-v1",
+  "dataset": "CICIoT2023",
+  "training_date": "2026-10-03T10:52:27.127986+00:00",
+  "feature_count": 46,
+  "features": [
+    "flow_duration",
+    "Header_Length",
+    "Protocol Type",
+    "Duration",
+    "Rate",
+    "Srate",
+    "Drate",
+    "fin_flag_number",
+    "syn_flag_number",
+    "rst_flag_number",
+    "psh_flag_number",
+    "ack_flag_number",
+    "ece_flag_number",
+    "cwr_flag_number",
+    "ack_count",
+    "syn_count",
+    "fin_count",
+    "urg_count",
+    "rst_count",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "Telnet",
+    "SMTP",
+    "SSH",
+    "IRC",
+    "TCP",
+    "UDP",
+    "DHCP",
+    "ARP",
+    "ICMP",
+    "IPv",
+    "LLC",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Tot size",
+    "IAT",
+    "Number",
+    "Magnitue",
+    "Radius",
+    "Covariance",
+    "Variance",
+    "Weight"
+  ],
+  "preprocessing": "StandardScaler(mean, std)",
+  "models": {
+    "isolation_forest": {
+      "algorithm": "IsolationForest",
+      "n_estimators": 100,
+      "contamination": 0.08,
+      "metrics": {
+        "precision": 0.9760649087221095,
+        "recall": 1.0,
+        "f1": 0.9878874974337918,
+        "fpr": 0.09833333333333333,
+        "confusion_matrix": {
+          "TN": 541,
+          "FP": 59,
+          "FN": 0,
+          "TP": 2406
+        }
+      }
+    },
+    "xgboost": {
+      "algorithm": "XGBClassifier",
+      "n_estimators": 120,
+      "max_depth": 6,
+      "learning_rate": 0.08,
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "fpr": 0.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": {
+          "TN": 600,
+          "FP": 0,
+          "FN": 0,
+          "TP": 2406
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "isolation_forest_decision_cutoff": 0.0,
+    "xgboost_attack_cutoff": 0.5
+  },
+  "metrics": {
+    "test_isolation_forest": {
+      "precision": 0.9760649087221095,
+      "recall": 1.0,
+      "f1": 0.9878874974337918,
+      "fpr": 0.09833333333333333,
+      "confusion_matrix": {
+        "TN": 541,
+        "FP": 59,
+        "FN": 0,
+        "TP": 2406
+      }
+    },
+    "test_xgboost": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fpr": 0.0,
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "confusion_matrix": {
+        "TN": 600,
+        "FP": 0,
+        "FN": 0,
+        "TP": 2406
+      }
+    }
+  },
+  "limitations": [
+    "Trained on CICIoT2023 synthetic IoT testbed features; real physical enterprise IoT sensors require flow aggregation sensor daemon.",
+    "Benchmark test set shows high metrics due to fixed testbed traffic signatures; field deployment requires continuous baseline drift adaptation.",
+    "Zero fake feature imputation is strictly enforced."
+  ],
+  "environment_versions": {
+    "python": "3.14.7",
+    "scikit_learn": "joblib",
+    "xgboost": "3.4.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3"
+  }
+}

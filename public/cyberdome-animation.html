@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CYBERDOME Cinematic Defense</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050607;
+            font-family: 'Arial', sans-serif;
+            color: #F4F7FA;
+        }
+        #canvas-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        #overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: transparent;
+        }
+        .text-element {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+        }
+        .huge-text {
+            font-size: 64px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 20px rgba(255, 23, 68, 0.8);
+        }
+        .warning-text {
+            color: #FF1744;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-shadow: 0 0 30px #FF1744;
+        }
+        .secure-text {
+            color: #00B8FF;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-shadow: 0 0 30px #00B8FF;
+        }
+        #brand-reveal {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo-text {
+            font-size: 80px;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+        }
+        .logo-cyber { color: #E0E0E0; }
+        .logo-dome { 
+            color: #FF1744; 
+            text-shadow: 0 0 30px rgba(255, 23, 68, 0.8);
+        }
+        .tagline {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #A0AAB5;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+        #scanlines {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 3px 100%;
+            z-index: 10;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div id="overlay">
+        <div id="text-threat" class="text-element warning-text">THREAT DETECTED</div>
+        <div id="text-protected" class="text-element secure-text">NETWORK PROTECTED</div>
+        <div id="text-secure" class="text-element secure-text" style="margin-bottom: 20px;">SYSTEM SECURE</div>
+        
+        <!-- Panels -->
+        <div id="panel-discover" class="text-element huge-text" style="color: #00B8FF;">DISCOVER</div>
+        <div id="panel-detect" class="text-element huge-text" style="color: #FF1744;">DETECT</div>
+        <div id="panel-simulate" class="text-element huge-text" style="color: #FFD600;">SIMULATE</div>
+        
+        <!-- Brand Reveal -->
+        <div id="brand-reveal" class="text-element">
+            <div class="logo-text">
+                <span class="logo-cyber">CYBER</span><span class="logo-dome">DOME</span>
+            </div>
+            <div class="tagline">Your Network's Silent Guardian</div>
+        </div>
+    </div>
+    <div id="scanlines"></div>
+
+    <!-- Include Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+    <script>
+        // Setup Three.js Scene
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050607, 0.002);
+        
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.set(0, 20, 100);
+        
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+        
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0x111111);
+        scene.add(ambientLight);
+        
+        const redLight = new THREE.PointLight(0xFF1744, 2, 500);
+        redLight.position.set(0, 50, 0);
+        scene.add(redLight);
+        
+        const cyanLight = new THREE.PointLight(0x00B8FF, 1, 500);
+        cyanLight.position.set(100, 20, 100);
+        scene.add(cyanLight);
+
+        // Assets
+        const objects = {};
+        
+        // Scene 1: Grid
+        const gridHelper = new THREE.GridHelper(2000, 100, 0xFF1744, 0x222222);
+        gridHelper.position.y = -20;
+        gridHelper.material.opacity = 0;
+        gridHelper.material.transparent = true;
+        scene.add(gridHelper);
+        objects.grid = gridHelper;
+        
+        // Scene 2: CYBERDOME CORE
+        const coreGeo = new THREE.IcosahedronGeometry(15, 2);
+        const coreMat = new THREE.MeshPhysicalMaterial({
+            color: 0x111111,
+            metalness: 0.9,
+            roughness: 0.1,
+            wireframe: true,
+            emissive: 0xFF1744,
+            emissiveIntensity: 0.2
+        });
+        const core = new THREE.Mesh(coreGeo, coreMat);
+        core.position.set(0, 0, 0);
+        core.scale.set(0.01, 0.01, 0.01); // start tiny
+        scene.add(core);
+        objects.core = core;
+        
+        // Scene 3: Network Nodes
+        const nodesGroup = new THREE.Group();
+        const nodeGeo = new THREE.BoxGeometry(2, 4, 2);
+        const nodeMat = new THREE.MeshPhysicalMaterial({ color: 0x00B8FF, metalness: 0.8, roughness: 0.2, emissive: 0x00B8FF, emissiveIntensity: 0.1 });
+        
+        const nodePositions = [];
+        for (let i = 0; i < 50; i++) {
+            const mesh = new THREE.Mesh(nodeGeo, nodeMat);
+            const x = (Math.random() - 0.5) * 300;
+            const z = (Math.random() - 0.5) * 300;
+            mesh.position.set(x, -18, z);
+            mesh.scale.y = Math.random() * 2 + 0.5;
+            nodesGroup.add(mesh);
+            nodePositions.push(new THREE.Vector3(x, mesh.scale.y * 2 - 18, z));
+        }
+        
+        // Network Lines
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x00B8FF, transparent: true, opacity: 0.2 });
+        const lineGeo = new THREE.BufferGeometry();
+        const linePoints = [];
+        for (let i = 0; i < nodePositions.length; i++) {
+            for (let j = i + 1; j < nodePositions.length; j++) {
+                if (nodePositions[i].distanceTo(nodePositions[j]) < 80) {
+                    linePoints.push(nodePositions[i], nodePositions[j]);
+                }
+            }
+            // Connect to core
+            if (nodePositions[i].distanceTo(new THREE.Vector3(0,0,0)) < 150) {
+                linePoints.push(nodePositions[i], new THREE.Vector3(0,-18,0));
+            }
+        }
+        lineGeo.setFromPoints(linePoints);
+        const networkLines = new THREE.LineSegments(lineGeo, lineMat);
+        nodesGroup.add(networkLines);
+        nodesGroup.visible = false;
+        scene.add(nodesGroup);
+        objects.nodes = nodesGroup;
+        
+        // Scene 4: Threats
+        const threatGroup = new THREE.Group();
+        const threatGeo = new THREE.TetrahedronGeometry(1.5, 0);
+        const threatMat = new THREE.MeshBasicMaterial({ color: 0xFF1744, wireframe: true });
+        for(let i = 0; i < 30; i++) {
+            const t = new THREE.Mesh(threatGeo, threatMat);
+            // Spawn outside
+            const angle = Math.random() * Math.PI * 2;
+            t.position.set(Math.cos(angle)*300, Math.random()*50, Math.sin(angle)*300);
+            t.userData = { angle, speed: Math.random()*0.02 + 0.01 };
+            threatGroup.add(t);
+        }
+        threatGroup.visible = false;
+        scene.add(threatGroup);
+        objects.threats = threatGroup;
+        
+        // Scene 5: Shield
+        const shieldGeo = new THREE.SphereGeometry(180, 32, 32);
+        const shieldMat = new THREE.MeshPhysicalMaterial({
+            color: 0xFF1744,
+            transparent: true,
+            opacity: 0,
+            metalness: 0.1,
+            roughness: 0,
+            transmission: 0.9,
+            emissive: 0xFF1744,
+            emissiveIntensity: 0.2,
+            side: THREE.DoubleSide
+        });
+        const shield = new THREE.Mesh(shieldGeo, shieldMat);
+        shield.position.set(0, -20, 0);
+        shield.scale.set(0.01, 0.01, 0.01);
+        scene.add(shield);
+        objects.shield = shield;
+
+        // Background Particles (Void)
+        const partGeo = new THREE.BufferGeometry();
+        const partCount = 2000;
+        const partPos = new Float32Array(partCount * 3);
+        for(let i=0; i<partCount*3; i++) partPos[i] = (Math.random()-0.5)*1000;
+        partGeo.setAttribute('position', new THREE.BufferAttribute(partPos, 3));
+        const partMat = new THREE.PointsMaterial({ color: 0xFF1744, size: 1, transparent: true, opacity: 0 });
+        const particles = new THREE.Points(partGeo, partMat);
+        scene.add(particles);
+        objects.particles = particles;
+        
+        // -------------------------------------------------------------
+        // Animation Timeline
+        // -------------------------------------------------------------
+        
+        let time = 0;
+        const clock = new THREE.Clock();
+
+        function showText(id, duration) {
+            const el = document.getElementById(id);
+            if(el) {
+                el.style.opacity = 1;
+                setTimeout(() => { el.style.opacity = 0; }, duration);
+            }
+        }
+
+        // T+1s: Scene 1 - Digital Void
+        setTimeout(() => {
+            new TWEEN.Tween(partMat).to({ opacity: 0.6 }, 2000).start();
+            new TWEEN.Tween(gridHelper.material).to({ opacity: 0.2 }, 3000).start();
+        }, 1000);
+
+        // T+4s: Scene 2 - CYBERDOME CORE
+        setTimeout(() => {
+            new TWEEN.Tween(core.scale).to({ x: 1, y: 1, z: 1 }, 3000).easing(TWEEN.Easing.Elastic.Out).start();
+            new TWEEN.Tween(coreMat).to({ emissiveIntensity: 1 }, 2000).start();
+        }, 4000);
+
+        // T+8s: Scene 3 - NETWORK CREATION
+        setTimeout(() => {
+            nodesGroup.visible = true;
+            // Pull camera back
+            new TWEEN.Tween(camera.position).to({ x: 0, y: 80, z: 250 }, 4000).easing(TWEEN.Easing.Cubic.InOut).start();
+            new TWEEN.Tween(camera.rotation).to({ x: -0.2 }, 4000).start();
+        }, 8000);
+
+        // T+14s: Scene 4 - THREAT DETECTION
+        setTimeout(() => {
+            threatGroup.visible = true;
+            showText('text-threat', 2500);
+            redLight.intensity = 5;
+        }, 14000);
+
+        // T+19s: Scene 5 - DEFENSE ACTIVATION
+        setTimeout(() => {
+            new TWEEN.Tween(shield.scale).to({ x: 1, y: 1, z: 1 }, 1500).easing(TWEEN.Easing.Quadratic.Out).start();
+            new TWEEN.Tween(shieldMat).to({ opacity: 0.4 }, 1000).start();
+            showText('text-protected', 2500);
+            
+            // Push threats back
+            threatGroup.children.forEach(t => {
+                const dir = t.position.clone().normalize();
+                new TWEEN.Tween(t.position).to({
+                    x: dir.x * 400,
+                    y: dir.y * 400 + 100,
+                    z: dir.z * 400
+                }, 2000).easing(TWEEN.Easing.Back.Out).start();
+            });
+            
+            redLight.intensity = 2; // back to normal
+        }, 19000);
+
+        // T+24s: Scene 6 - SECURITY INTELLIGENCE
+        setTimeout(() => {
+            // Camera flythrough
+            new TWEEN.Tween(camera.position).to({ x: 50, y: 20, z: 80 }, 3000).easing(TWEEN.Easing.Quadratic.InOut).start();
+            showText('panel-discover', 1500);
+            setTimeout(() => showText('panel-detect', 1500), 1600);
+            setTimeout(() => showText('panel-simulate', 1500), 3200);
+        }, 24000);
+
+        // T+32s: Scene 8 - DIGITAL TWIN
+        setTimeout(() => {
+            // Smooth orbital
+            new TWEEN.Tween(camera.position).to({ x: -100, y: 60, z: 150 }, 5000).easing(TWEEN.Easing.Sinusoidal.InOut).start();
+            coreMat.wireframe = false;
+            nodeMat.wireframe = true;
+            nodeMat.emissive.setHex(0xFF1744); // switch to red digital twin aesthetic
+            lineMat.color.setHex(0xFF1744);
+            gridHelper.material.color.setHex(0x00B8FF);
+        }, 32000);
+
+        // T+39s: Scene 9 - FINAL DEFENSE
+        setTimeout(() => {
+            showText('text-secure', 4000);
+            threatGroup.visible = false; // threats destroyed
+            shieldMat.opacity = 0.1;
+        }, 39000);
+
+        // T+44s: Scene 10 - BRAND REVEAL
+        setTimeout(() => {
+            document.getElementById('brand-reveal').style.opacity = 1;
+            // Fade out everything else
+            new TWEEN.Tween(coreMat).to({ opacity: 0 }, 2000).start();
+            new TWEEN.Tween(nodeMat).to({ opacity: 0 }, 2000).start();
+            new TWEEN.Tween(lineMat).to({ opacity: 0 }, 2000).start();
+            new TWEEN.Tween(shieldMat).to({ opacity: 0 }, 2000).start();
+            new TWEEN.Tween(gridHelper.material).to({ opacity: 0 }, 2000).start();
+            
+            // Slow zoom out
+            new TWEEN.Tween(camera.position).to({ z: 200 }, 6000).start();
+        }, 44000);
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Animation Loop
+        function animate() {
+            requestAnimationFrame(animate);
+            const delta = clock.getDelta();
+            
+            TWEEN.update();
+
+            // Rotations
+            objects.core.rotation.y += 0.5 * delta;
+            objects.core.rotation.x += 0.2 * delta;
+            objects.particles.rotation.y -= 0.05 * delta;
+            objects.shield.rotation.y += 0.1 * delta;
+            
+            // Threats movement
+            if (objects.threats.visible) {
+                objects.threats.children.forEach(t => {
+                    t.rotation.x += 0.1;
+                    t.rotation.y += 0.1;
+                    // move towards center
+                    if (t.position.length() > 190) {
+                        const dir = t.position.clone().normalize().multiplyScalar(-100 * delta);
+                        t.position.add(dir);
+                    }
+                });
+            }
+
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+    </script>
+</body>
+</html>

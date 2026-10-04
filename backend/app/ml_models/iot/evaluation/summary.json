@@ -1,0 +1,35 @@
+{
+  "dataset": "CICIoT2023",
+  "rows": 15000,
+  "columns": 49,
+  "features_used": 46,
+  "isolation_forest": {
+    "precision": 0.9760649087221095,
+    "recall": 1.0,
+    "f1": 0.9878874974337918,
+    "fpr": 0.09833333333333333,
+    "confusion_matrix": {
+      "TN": 541,
+      "FP": 59,
+      "FN": 0,
+      "TP": 2406
+    }
+  },
+  "xgboost": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "confusion_matrix": {
+      "TN": 600,
+      "FP": 0,
+      "FN": 0,
+      "TP": 2406
+    }
+  },
+  "artifact_dir": "/Users/hassaankhan/Desktop/cyberX/backend/app/ml_models/iot",
+  "model_version": "iot-anomaly-v1",
+  "status": "TRAINING_COMPLETE"
+}

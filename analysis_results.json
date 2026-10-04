@@ -1,0 +1,1200 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "file": "/src/app/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/verify",
+      "file": "/src/app/verify/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/signup",
+      "file": "/src/app/signup/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/detection-rules",
+      "file": "/src/app/(dashboard)/detection-rules/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/personal",
+      "file": "/src/app/(dashboard)/personal/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/personal/settings",
+      "file": "/src/app/(dashboard)/personal/settings/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/personal/url-check",
+      "file": "/src/app/(dashboard)/personal/url-check/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/personal/otp-scam",
+      "file": "/src/app/(dashboard)/personal/otp-scam/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/personal/dashboard",
+      "file": "/src/app/(dashboard)/personal/dashboard/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/personal/fraud-call",
+      "file": "/src/app/(dashboard)/personal/fraud-call/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/personal/device-security",
+      "file": "/src/app/(dashboard)/personal/device-security/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/attack-graph",
+      "file": "/src/app/(dashboard)/attack-graph/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/ueba",
+      "file": "/src/app/(dashboard)/ueba/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/what-if",
+      "file": "/src/app/(dashboard)/what-if/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/website-security",
+      "file": "/src/app/(dashboard)/website-security/page.tsx",
+      "has_fetch": true,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/training/phishing-simulation",
+      "file": "/src/app/(dashboard)/training/phishing-simulation/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/simulate/human-behavior",
+      "file": "/src/app/(dashboard)/simulate/human-behavior/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/simulate/lab",
+      "file": "/src/app/(dashboard)/simulate/lab/page.tsx",
+      "has_fetch": true,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/network",
+      "file": "/src/app/(dashboard)/network/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/admin",
+      "file": "/src/app/(dashboard)/admin/page.tsx",
+      "has_fetch": true,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/mitre",
+      "file": "/src/app/(dashboard)/mitre/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/iot",
+      "file": "/src/app/(dashboard)/iot/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/academy",
+      "file": "/src/app/(dashboard)/academy/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/academy/phishing",
+      "file": "/src/app/(dashboard)/academy/phishing/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/dashboard",
+      "file": "/src/app/(dashboard)/dashboard/page.tsx",
+      "has_fetch": true,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/ai",
+      "file": "/src/app/(dashboard)/ai/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/employee",
+      "file": "/src/app/(dashboard)/employee/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/employee/alerts",
+      "file": "/src/app/(dashboard)/employee/alerts/page.tsx",
+      "has_fetch": true,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/employee/dashboard",
+      "file": "/src/app/(dashboard)/employee/dashboard/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/employee/my-security",
+      "file": "/src/app/(dashboard)/employee/my-security/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/employee/phishing",
+      "file": "/src/app/(dashboard)/employee/phishing/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/assets",
+      "file": "/src/app/(dashboard)/assets/page.tsx",
+      "has_fetch": true,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/scanner",
+      "file": "/src/app/(dashboard)/scanner/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/presentation",
+      "file": "/src/app/(dashboard)/presentation/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/digital-twin",
+      "file": "/src/app/(dashboard)/digital-twin/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/vulnerabilities",
+      "file": "/src/app/(dashboard)/vulnerabilities/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/soar",
+      "file": "/src/app/(dashboard)/soar/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/detection/attack-graph",
+      "file": "/src/app/(dashboard)/detection/attack-graph/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/detection/ueba",
+      "file": "/src/app/(dashboard)/detection/ueba/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/detection/network",
+      "file": "/src/app/(dashboard)/detection/network/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/detection/iot",
+      "file": "/src/app/(dashboard)/detection/iot/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/notifications",
+      "file": "/src/app/(dashboard)/notifications/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/incidents",
+      "file": "/src/app/(dashboard)/incidents/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/analytics",
+      "file": "/src/app/(dashboard)/analytics/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/(dashboard)/reports",
+      "file": "/src/app/(dashboard)/reports/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    },
+    {
+      "route": "/(dashboard)/attack-surface",
+      "file": "/src/app/(dashboard)/attack-surface/page.tsx",
+      "has_fetch": false,
+      "has_mock": true
+    },
+    {
+      "route": "/login",
+      "file": "/src/app/login/page.tsx",
+      "has_fetch": false,
+      "has_mock": false
+    }
+  ],
+  "routers": [
+    {
+      "router": "auth.py",
+      "method": "POST",
+      "endpoint": "/signup"
+    },
+    {
+      "router": "auth.py",
+      "method": "POST",
+      "endpoint": "/company-signup"
+    },
+    {
+      "router": "auth.py",
+      "method": "POST",
+      "endpoint": "/login"
+    },
+    {
+      "router": "auth.py",
+      "method": "GET",
+      "endpoint": "/me"
+    },
+    {
+      "router": "auth.py",
+      "method": "POST",
+      "endpoint": "/logout"
+    },
+    {
+      "router": "auth.py",
+      "method": "POST",
+      "endpoint": "/forgot-password"
+    },
+    {
+      "router": "auth.py",
+      "method": "POST",
+      "endpoint": "/reset-password"
+    },
+    {
+      "router": "scanner.py",
+      "method": "GET",
+      "endpoint": "/assessments/{assessment_id}"
+    },
+    {
+      "router": "sensors.py",
+      "method": "GET",
+      "endpoint": "/"
+    },
+    {
+      "router": "sensors.py",
+      "method": "POST",
+      "endpoint": "/register"
+    },
+    {
+      "router": "sensors.py",
+      "method": "POST",
+      "endpoint": "/{sensor_id}/telemetry"
+    },
+    {
+      "router": "digital_twin.py",
+      "method": "GET",
+      "endpoint": "/nodes"
+    },
+    {
+      "router": "digital_twin.py",
+      "method": "GET",
+      "endpoint": "/"
+    },
+    {
+      "router": "website_security.py",
+      "method": "POST",
+      "endpoint": "/assessments"
+    },
+    {
+      "router": "website_security.py",
+      "method": "GET",
+      "endpoint": "/assessments"
+    },
+    {
+      "router": "website_security.py",
+      "method": "GET",
+      "endpoint": "/assessments/{assessment_id}"
+    },
+    {
+      "router": "website_security.py",
+      "method": "POST",
+      "endpoint": "/assessments/{assessment_id}/cancel"
+    },
+    {
+      "router": "website_security.py",
+      "method": "GET",
+      "endpoint": "/assessments/{assessment_id}/progress"
+    },
+    {
+      "router": "attack_surface.py",
+      "method": "GET",
+      "endpoint": "/assessments/{assessment_id}"
+    },
+    {
+      "router": "attack_surface.py",
+      "method": "GET",
+      "endpoint": "/summary"
+    },
+    {
+      "router": "ai.py",
+      "method": "POST",
+      "endpoint": "/chat"
+    },
+    {
+      "router": "ai.py",
+      "method": "GET",
+      "endpoint": "/conversations"
+    },
+    {
+      "router": "ai.py",
+      "method": "GET",
+      "endpoint": "/conversations/{conversation_id}"
+    },
+    {
+      "router": "attack_graph.py",
+      "method": "GET",
+      "endpoint": "/"
+    },
+    {
+      "router": "agents.py",
+      "method": "GET",
+      "endpoint": "/"
+    },
+    {
+      "router": "agents.py",
+      "method": "POST",
+      "endpoint": "/enroll"
+    },
+    {
+      "router": "agents.py",
+      "method": "POST",
+      "endpoint": "/{agent_id}/heartbeat"
+    },
+    {
+      "router": "agents.py",
+      "method": "POST",
+      "endpoint": "/{agent_id}/revoke"
+    },
+    {
+      "router": "agents.py",
+      "method": "POST",
+      "endpoint": "/{agent_id}/telemetry"
+    },
+    {
+      "router": "admin.py",
+      "method": "GET",
+      "endpoint": "/overview"
+    },
+    {
+      "router": "admin.py",
+      "method": "GET",
+      "endpoint": "/employees"
+    },
+    {
+      "router": "admin.py",
+      "method": "POST",
+      "endpoint": "/employees/invite"
+    },
+    {
+      "router": "admin.py",
+      "method": "POST",
+      "endpoint": "/employees/{employee_id}/reset-access"
+    },
+    {
+      "router": "admin.py",
+      "method": "GET",
+      "endpoint": "/company"
+    },
+    {
+      "router": "admin.py",
+      "method": "GET",
+      "endpoint": "/audit"
+    },
+    {
+      "router": "assets.py",
+      "method": "GET",
+      "endpoint": "/{asset_id}"
+    },
+    {
+      "router": "network.py",
+      "method": "GET",
+      "endpoint": "/events"
+    },
+    {
+      "router": "network.py",
+      "method": "POST",
+      "endpoint": "/events"
+    },
+    {
+      "router": "network.py",
+      "method": "GET",
+      "endpoint": "/alerts"
+    },
+    {
+      "router": "network.py",
+      "method": "GET",
+      "endpoint": "/topology"
+    },
+    {
+      "router": "network.py",
+      "method": "GET",
+      "endpoint": "/stats"
+    },
+    {
+      "router": "reports.py",
+      "method": "GET",
+      "endpoint": "/"
+    },
+    {
+      "router": "reports.py",
+      "method": "POST",
+      "endpoint": "/generate"
+    },
+    {
+      "router": "reports.py",
+      "method": "GET",
+      "endpoint": "/{report_id}"
+    },
+    {
+      "router": "reports.py",
+      "method": "GET",
+      "endpoint": "/{report_id}/download"
+    },
+    {
+      "router": "soar.py",
+      "method": "GET",
+      "endpoint": "/playbooks"
+    },
+    {
+      "router": "soar.py",
+      "method": "POST",
+      "endpoint": "/playbooks"
+    },
+    {
+      "router": "soar.py",
+      "method": "GET",
+      "endpoint": "/playbooks/{playbook_id}"
+    },
+    {
+      "router": "soar.py",
+      "method": "POST",
+      "endpoint": "/playbooks/{playbook_id}/execute"
+    },
+    {
+      "router": "soar.py",
+      "method": "GET",
+      "endpoint": "/executions"
+    },
+    {
+      "router": "ueba.py",
+      "method": "GET",
+      "endpoint": "/events"
+    },
+    {
+      "router": "ueba.py",
+      "method": "POST",
+      "endpoint": "/events"
+    },
+    {
+      "router": "ueba.py",
+      "method": "GET",
+      "endpoint": "/anomalies"
+    },
+    {
+      "router": "ueba.py",
+      "method": "GET",
+      "endpoint": "/users/{target_user_id}/profile"
+    },
+    {
+      "router": "notifications.py",
+      "method": "GET",
+      "endpoint": "/preferences"
+    },
+    {
+      "router": "companies.py",
+      "method": "POST",
+      "endpoint": "/join"
+    },
+    {
+      "router": "companies.py",
+      "method": "POST",
+      "endpoint": "/invitations/accept"
+    },
+    {
+      "router": "vulnerability.py",
+      "method": "GET",
+      "endpoint": "/{vulnerability_id}"
+    },
+    {
+      "router": "vulnerability.py",
+      "method": "GET",
+      "endpoint": "/summary/stats"
+    },
+    {
+      "router": "incidents.py",
+      "method": "GET",
+      "endpoint": "/"
+    },
+    {
+      "router": "incidents.py",
+      "method": "POST",
+      "endpoint": "/"
+    },
+    {
+      "router": "incidents.py",
+      "method": "GET",
+      "endpoint": "/{incident_id}"
+    },
+    {
+      "router": "incidents.py",
+      "method": "POST",
+      "endpoint": "/{incident_id}/events"
+    },
+    {
+      "router": "iot.py",
+      "method": "GET",
+      "endpoint": "/devices"
+    },
+    {
+      "router": "iot.py",
+      "method": "POST",
+      "endpoint": "/devices"
+    },
+    {
+      "router": "iot.py",
+      "method": "GET",
+      "endpoint": "/devices/{device_id}"
+    },
+    {
+      "router": "iot.py",
+      "method": "GET",
+      "endpoint": "/anomalies"
+    },
+    {
+      "router": "iot.py",
+      "method": "GET",
+      "endpoint": "/stats"
+    },
+    {
+      "router": "personal.py",
+      "method": "POST",
+      "endpoint": "/url-check"
+    },
+    {
+      "router": "personal.py",
+      "method": "POST",
+      "endpoint": "/fraud-call"
+    },
+    {
+      "router": "personal.py",
+      "method": "POST",
+      "endpoint": "/otp-scam"
+    },
+    {
+      "router": "personal.py",
+      "method": "POST",
+      "endpoint": "/device-security"
+    },
+    {
+      "router": "personal.py",
+      "method": "GET",
+      "endpoint": "/dashboard"
+    },
+    {
+      "router": "personal.py",
+      "method": "GET",
+      "endpoint": "/academy/courses"
+    },
+    {
+      "router": "personal.py",
+      "method": "POST",
+      "endpoint": "/academy/progress"
+    },
+    {
+      "router": "personal.py",
+      "method": "GET",
+      "endpoint": "/phishing/campaigns"
+    },
+    {
+      "router": "personal.py",
+      "method": "POST",
+      "endpoint": "/phishing/report"
+    }
+  ],
+  "models": [
+    {
+      "file": "phase4.py",
+      "class": "TenantBase",
+      "table": "agent_devices"
+    },
+    {
+      "file": "models.py",
+      "class": "User",
+      "table": "users"
+    },
+    {
+      "file": "models.py",
+      "class": "Company",
+      "table": "companies"
+    },
+    {
+      "file": "models.py",
+      "class": "CompanyUser",
+      "table": "company_users"
+    },
+    {
+      "file": "models.py",
+      "class": "Invitation",
+      "table": "invitations"
+    },
+    {
+      "file": "models.py",
+      "class": "Asset",
+      "table": "assets"
+    },
+    {
+      "file": "models.py",
+      "class": "AuditLog",
+      "table": "audit_logs"
+    },
+    {
+      "file": "models.py",
+      "class": "Notification",
+      "table": "notifications"
+    },
+    {
+      "file": "models.py",
+      "class": "NotificationPreference",
+      "table": "notification_preferences"
+    },
+    {
+      "file": "website_security.py",
+      "class": "WebsiteAssessment",
+      "table": "website_assessments"
+    },
+    {
+      "file": "website_security.py",
+      "class": "DiscoveredAsset",
+      "table": "discovered_assets"
+    },
+    {
+      "file": "website_security.py",
+      "class": "WebsiteFinding",
+      "table": "website_findings"
+    },
+    {
+      "file": "website_security.py",
+      "class": "Vulnerability",
+      "table": "vulnerabilities"
+    },
+    {
+      "file": "website_security.py",
+      "class": "AssetVulnerability",
+      "table": "asset_vulnerabilities"
+    },
+    {
+      "file": "ai.py",
+      "class": "AIConversation",
+      "table": "ai_conversations"
+    },
+    {
+      "file": "ai.py",
+      "class": "AIMessage",
+      "table": "ai_messages"
+    },
+    {
+      "file": "ai.py",
+      "class": "KnowledgeDocument",
+      "table": "knowledge_documents"
+    },
+    {
+      "file": "ai.py",
+      "class": "KnowledgeChunk",
+      "table": "knowledge_chunks"
+    }
+  ],
+  "mock_data_occurrences": [
+    "/src/types/index.ts",
+    "/src/app/page.tsx",
+    "/src/app/signup/page.tsx",
+    "/src/app/(dashboard)/detection-rules/page.tsx",
+    "/src/app/(dashboard)/personal/settings/page.tsx",
+    "/src/app/(dashboard)/personal/url-check/page.tsx",
+    "/src/app/(dashboard)/personal/otp-scam/page.tsx",
+    "/src/app/(dashboard)/personal/fraud-call/page.tsx",
+    "/src/app/(dashboard)/ueba/page.tsx",
+    "/src/app/(dashboard)/what-if/page.tsx",
+    "/src/app/(dashboard)/website-security/page.tsx",
+    "/src/app/(dashboard)/training/phishing-simulation/page.tsx",
+    "/src/app/(dashboard)/simulate/human-behavior/page.tsx",
+    "/src/app/(dashboard)/simulate/lab/page.tsx",
+    "/src/app/(dashboard)/network/page.tsx",
+    "/src/app/(dashboard)/admin/page.tsx",
+    "/src/app/(dashboard)/mitre/page.tsx",
+    "/src/app/(dashboard)/iot/page.tsx",
+    "/src/app/(dashboard)/academy/page.tsx",
+    "/src/app/(dashboard)/dashboard/page.tsx",
+    "/src/app/(dashboard)/ai/page.tsx",
+    "/src/app/(dashboard)/employee/alerts/page.tsx",
+    "/src/app/(dashboard)/employee/phishing/page.tsx",
+    "/src/app/(dashboard)/assets/page.tsx",
+    "/src/app/(dashboard)/scanner/page.tsx",
+    "/src/app/(dashboard)/presentation/page.tsx",
+    "/src/app/(dashboard)/vulnerabilities/page.tsx",
+    "/src/app/(dashboard)/soar/page.tsx",
+    "/src/app/(dashboard)/notifications/page.tsx",
+    "/src/app/(dashboard)/analytics/page.tsx",
+    "/src/app/(dashboard)/attack-surface/page.tsx",
+    "/src/app/login/page.tsx",
+    "/src/stores/appStore.ts",
+    "/src/components/CyberDomeScene.tsx",
+    "/src/components/ui/index.tsx",
+    "/src/components/3d/DigitalTwin3DScene.tsx",
+    "/src/components/3d/CyberGlobe.tsx",
+    "/src/components/3d/SimulationLab3DScene.tsx",
+    "/src/components/layout/index.tsx",
+    "/src/components/layout/UnifiedNavbar.tsx",
+    "/src/data/mockData.ts",
+    "/src/services/index.ts",
+    "/backend/app/seed.py",
+    "/backend/app/main.py",
+    "/backend/app/routers/website_security.py",
+    "/backend/app/routers/ai.py",
+    "/backend/app/routers/reports.py",
+    "/backend/app/routers/vulnerability.py",
+    "/backend/app/services/rag_service.py",
+    "/backend/tests/test_phase3_full.py",
+    "/backend/tests/test_phase2.py",
+    "/backend/tests/test_phase1.py",
+    "/backend/venv/lib/python3.14/site-packages/typing_extensions.py",
+    "/backend/venv/lib/python3.14/site-packages/jwt/algorithms.py",
+    "/backend/venv/lib/python3.14/site-packages/packaging/licenses/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/httpcore/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/httpcore/_backends/mock.py",
+    "/backend/venv/lib/python3.14/site-packages/h11/_writers.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/graphics.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/hdl.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/ecl.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_postgres_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_lua_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_qlik_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/phix.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/usd.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_sourcemod_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/erlang.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/apdlexer.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/configs.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/idl.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/dsls.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_scilab_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/lisp.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_googlesql_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/perl.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/automation.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_php_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/gsql.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_stata_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/matlab.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/int_fiction.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_cocoa_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/ncl.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_asy_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/igor.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/asm.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/kusto.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/webassembly.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/business.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/dax.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/rdf.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/actionscript.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/bitbake.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_mql_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/python.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_csound_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_usd_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/jvm.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/sql.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/praat.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_mysql_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/modeling.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/arturo.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/foxpro.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/dotnet.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/_tsql_builtins.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/lexers/wgsl.py",
+    "/backend/venv/lib/python3.14/site-packages/pygments/formatters/html.py",
+    "/backend/venv/lib/python3.14/site-packages/mako/exceptions.py",
+    "/backend/venv/lib/python3.14/site-packages/mako/parsetree.py",
+    "/backend/venv/lib/python3.14/site-packages/mako/testing/helpers.py",
+    "/backend/venv/lib/python3.14/site-packages/pycparser/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/asyncpg/exceptions/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py",
+    "/backend/venv/lib/python3.14/site-packages/google/auth/pluggable.py",
+    "/backend/venv/lib/python3.14/site-packages/google/auth/transport/_custom_tls_signer.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_test_api_client.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_live_converters.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_extra_utils.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/models.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/types.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_mcp_utils.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_transformers.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_operations_converters.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/live.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tunings.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_gaos/types/interactions/audiocontent.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_gaos/types/interactions/audioresponseformat.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_gaos/types/interactions/audiodelta.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_gaos/types/voices/voice_input.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_gaos/types/voices/voice_output.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/_gaos/utils/response_helpers.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/conftest.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/interactions/test_httpx_compat.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/interactions/test_auth.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/interactions/test_paths.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/interactions/test_integration.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/types/test_bytes_internal.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/types/test_future.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/types/test_optional_types.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/types/test_types.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/file_search_stores/test_get.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/file_search_stores/test_create.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/public_samples/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/public_samples/test_gemini_text_only.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/mcp/test_parse_config_for_mcp_sessions.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/mcp/test_has_mcp_tool_usage.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/mcp/test_mcp_to_gemini_tools.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/mcp/test_parse_config_for_mcp_usage.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/shared/tunings/test_create.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/shared/tunings/test_create_get_cancel.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/shared/caches/test_create_update_get.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/shared/caches/test_create_get_delete.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_content_multi_regional.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_list.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_videos.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_content_part.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_content_tools.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_function_call_streaming.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_content.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_embed_content.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_content_media_resolution.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/models/test_generate_content_mcp.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/afc/test_generate_content_stream_afc.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/afc/test_get_function_map.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/afc/test_get_function_response_parts.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/afc/test_get_max_remote_calls_for_afc.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/afc/test_find_afc_incompatible_tool_indexes.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/tunings/test_end_to_end.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/tunings/test_validate_reward.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/tunings/test_tune.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/common/test_duck_type.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/transformers/test_t_batch.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/live/test_live_response.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/live/test_send_client_content.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/live/test_live.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/live/test_live_music.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/live/test_send_realtime_input.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/live/test_send_tool_response.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/files/test_download.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/files/test_register.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/chats/test_get_history.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/chats/test_send_message.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/documents/test_get.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/errors/test_api_error.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/local_tokenizer/test_local_tokenizer_loader.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/local_tokenizer/test_local_tokenizer.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_create_with_vertex_dataset.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_create_with_inlined_requests.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_embedding.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_create_with_file.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_create.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_create_with_gcs.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/batches/test_create_with_bigquery.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_retries.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_async_stream.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_http_options.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_client_initialization.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_client_close.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_custom_client.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_upload_errors.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_client_requests.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/client/test_httpx2_client.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/caches/test_create_custom_url.py",
+    "/backend/venv/lib/python3.14/site-packages/google/genai/tests/caches/test_create.py",
+    "/backend/venv/lib/python3.14/site-packages/cffi/setuptools_ext.py",
+    "/backend/venv/lib/python3.14/site-packages/cffi/model.py",
+    "/backend/venv/lib/python3.14/site-packages/cffi/lock.py",
+    "/backend/venv/lib/python3.14/site-packages/cffi/recompiler.py",
+    "/backend/venv/lib/python3.14/site-packages/cffi/cparser.py",
+    "/backend/venv/lib/python3.14/site-packages/idna/core.py",
+    "/backend/venv/lib/python3.14/site-packages/click/_textwrap.py",
+    "/backend/venv/lib/python3.14/site-packages/click/core.py",
+    "/backend/venv/lib/python3.14/site-packages/click/types.py",
+    "/backend/venv/lib/python3.14/site-packages/click/testing.py",
+    "/backend/venv/lib/python3.14/site-packages/tenacity/nap.py",
+    "/backend/venv/lib/python3.14/site-packages/websockets/frames.py",
+    "/backend/venv/lib/python3.14/site-packages/websockets/asyncio/connection.py",
+    "/backend/venv/lib/python3.14/site-packages/aiosqlite/tests/smoke.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/util/typing.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/config.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/engines.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/util.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/cancellation.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/assertions.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/provision.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/requirements.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/schema.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/fixtures/sql.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/suite/test_dialect.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/suite/test_reflection.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/testing/suite/test_types.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/postgresql/base.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/oracle/vector.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/oracle/dictionary.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/oracle/base.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/sqlite/pysqlite.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/mysql/reserved_words.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/mysql/reflection.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/mysql/base.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/mssql/provision.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/dialects/mssql/base.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/instrumentation.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/attributes.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/strategies.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/_orm_constructors.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/dependency.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/descriptor_props.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/orm/state.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/interfaces.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/strategies.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/reflection.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/url.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/engine/mock.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/event/legacy.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/functions.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/_selectable_constructors.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/compiler.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/_typing.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/util.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/elements.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/_elements_constructors.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/sqltypes.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/operators.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/selectable.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/expression.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/type_api.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/crud.py",
+    "/backend/venv/lib/python3.14/site-packages/sqlalchemy/sql/lambdas.py",
+    "/backend/venv/lib/python3.14/site-packages/charset_normalizer/legacy.py",
+    "/backend/venv/lib/python3.14/site-packages/charset_normalizer/constant.py",
+    "/backend/venv/lib/python3.14/site-packages/requests/cookies.py",
+    "/backend/venv/lib/python3.14/site-packages/requests/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_internal/network/session.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_internal/utils/logging.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_internal/req/constructors.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_internal/vcs/git.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/packaging/licenses/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/pygments/lexers/python.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/distlib/compat.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/distlib/util.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/distlib/resources.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/cachecontrol/controller.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/requests/cookies.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/requests/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/rich/layout.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/rich/pretty.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/rich/progress.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/rich/__main__.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/urllib3/fields.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/urllib3/connection.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/urllib3/_request_methods.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/urllib3/connectionpool.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/urllib3/util/retry.py",
+    "/backend/venv/lib/python3.14/site-packages/pip/_vendor/resolvelib/resolvers/resolution.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc2511.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc3709.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc1157.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc2315.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc2251.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc2314.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc2459.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc3447.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc5208.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc2437.py",
+    "/backend/venv/lib/python3.14/site-packages/pyasn1_modules/rfc1155.py",
+    "/backend/venv/lib/python3.14/site-packages/httpx/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/httpx/_transports/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/httpx/_transports/mock.py",
+    "/backend/venv/lib/python3.14/site-packages/fastapi/applications.py",
+    "/backend/venv/lib/python3.14/site-packages/fastapi/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/fastapi/routing.py",
+    "/backend/venv/lib/python3.14/site-packages/fastapi/datastructures.py",
+    "/backend/venv/lib/python3.14/site-packages/fastapi/dependencies/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/fastapi/openapi/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/uvloop/_testbase.py",
+    "/backend/venv/lib/python3.14/site-packages/yaml/constructor.py",
+    "/backend/venv/lib/python3.14/site-packages/uvicorn/middleware/message_logger.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/command.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/config.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/util/sqla_compat.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/runtime/environment.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/runtime/migration.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/operations/schemaobj.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/operations/ops.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/testing/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/testing/fixtures.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/testing/suite/test_autogen_fks.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/testing/suite/test_autogen_computed.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/testing/suite/test_autogen_comments.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/autogenerate/api.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/autogenerate/compare/constraints.py",
+    "/backend/venv/lib/python3.14/site-packages/alembic/templates/multidb/env.py",
+    "/backend/venv/lib/python3.14/site-packages/urllib3/fields.py",
+    "/backend/venv/lib/python3.14/site-packages/urllib3/connection.py",
+    "/backend/venv/lib/python3.14/site-packages/urllib3/_request_methods.py",
+    "/backend/venv/lib/python3.14/site-packages/urllib3/connectionpool.py",
+    "/backend/venv/lib/python3.14/site-packages/urllib3/util/retry.py",
+    "/backend/venv/lib/python3.14/site-packages/greenlet/tests/leakcheck.py",
+    "/backend/venv/lib/python3.14/site-packages/greenlet/tests/test_tracing.py",
+    "/backend/venv/lib/python3.14/site-packages/greenlet/tests/test_greenlet.py",
+    "/backend/venv/lib/python3.14/site-packages/greenlet/tests/test_interpreter_shutdown.py",
+    "/backend/venv/lib/python3.14/site-packages/greenlet/tests/test_leaks.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/config.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/mypy.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/types.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/json_schema.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/type_adapter.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/dataclasses.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/main.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/v1/_hypothesis_plugin.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/v1/mypy.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/v1/main.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/_internal/_model_construction.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/_internal/_generate_schema.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/_internal/_fields.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/_internal/_mock_val_ser.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/_internal/_generics.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/_internal/_dataclasses.py",
+    "/backend/venv/lib/python3.14/site-packages/pydantic/deprecated/copy_internals.py",
+    "/backend/venv/lib/python3.14/site-packages/dns/query.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/unittest.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/compat.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/capture.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/hookspec.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/timing.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/outcomes.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/python.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/doctest.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/raises.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/monkeypatch.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/setupplan.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/pathlib.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/cacheprovider.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/config/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/_code/code.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/assertion/util.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/assertion/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/assertion/highlight.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/assertion/rewrite.py",
+    "/backend/venv/lib/python3.14/site-packages/_pytest/assertion/compare_text.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/totp.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/registry.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/context.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/exc.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/crypto/digest.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/crypto/des.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/ext/django/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_ext_django.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_registry.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_utils.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/tox_support.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/_test_bad_register.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_handlers.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_handlers_django.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_totp.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_handlers_argon2.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_handlers_bcrypt.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/utils.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_handlers_pbkdf2.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_utils_pbkdf2.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_crypto_digest.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_context.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_context_deprecated.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_apache.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_handlers_cisco.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/tests/test_utils_handlers.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/utils/handlers.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/utils/__init__.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/utils/compat/_ordered_dict.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/django.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/sun_md5_crypt.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/argon2.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/scrypt.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/digests.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/cisco.py",
+    "/backend/venv/lib/python3.14/site-packages/passlib/handlers/bcrypt.py"
+  ]
+}

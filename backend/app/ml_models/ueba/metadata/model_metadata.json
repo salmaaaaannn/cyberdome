@@ -1,0 +1,65 @@
+{
+  "module": "ueba_anomaly_detection",
+  "model_version": "ueba-anomaly-v1",
+  "dataset_name": "CERT_Insider_Threat_Benchmark",
+  "dataset_version": "r4.2_r5.2_representation",
+  "training_timestamp": "2026-10-03T11:14:24.551515+00:00",
+  "feature_count": 30,
+  "feature_names": [
+    "hour_of_day",
+    "day_of_week",
+    "is_weekend",
+    "is_after_hours",
+    "login_count",
+    "failed_login_count",
+    "login_failure_rate",
+    "session_duration",
+    "unique_devices_count",
+    "unique_ips_count",
+    "new_ip_flag",
+    "new_device_flag",
+    "file_access_count",
+    "unique_files_count",
+    "sensitive_file_count",
+    "file_write_count",
+    "file_delete_count",
+    "unusual_file_rate",
+    "http_request_count",
+    "unique_domains_count",
+    "external_domain_count",
+    "suspicious_domain_count",
+    "data_transfer_bytes",
+    "email_count",
+    "external_recipient_count",
+    "attachment_count",
+    "large_attachment_count",
+    "removable_media_events",
+    "privileged_action_count",
+    "failed_resource_access_count"
+  ],
+  "preprocessing_method": "StandardScaler (fitted on train split only)",
+  "isolation_forest_params": {
+    "n_estimators": 150,
+    "contamination": 0.12,
+    "random_state": 42
+  },
+  "xgboost_params": {
+    "n_estimators": 150,
+    "max_depth": 5,
+    "learning_rate": 0.08,
+    "subsample": 0.85,
+    "colsample_bytree": 0.85,
+    "random_state": 42
+  },
+  "metrics_summary": {
+    "isolation_forest_f1": 0.905,
+    "xgboost_f1": 1.0,
+    "xgboost_roc_auc": 1.0
+  },
+  "artifact_paths": {
+    "isolation_forest": "/Users/hassaankhan/Desktop/cyberX/backend/app/ml_models/ueba/models/ueba_isolation_forest.joblib",
+    "xgboost": "/Users/hassaankhan/Desktop/cyberX/backend/app/ml_models/ueba/models/ueba_xgboost.joblib",
+    "scaler": "/Users/hassaankhan/Desktop/cyberX/backend/app/ml_models/ueba/preprocessing/scaler.joblib",
+    "schema": "/Users/hassaankhan/Desktop/cyberX/backend/app/ml_models/ueba/preprocessing/feature_schema.json"
+  }
+}

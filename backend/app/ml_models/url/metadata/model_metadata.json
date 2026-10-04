@@ -1,0 +1,64 @@
+{
+  "model_version": "url-phishing-v1",
+  "dataset_benchmark": "PhishTank_OpenPhish_Benchmark",
+  "model_status": "TRAINED_VERIFIED",
+  "feature_count": 27,
+  "features": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "fragment_length",
+    "number_of_dots",
+    "number_of_hyphens",
+    "number_of_underscores",
+    "number_of_slashes",
+    "number_of_question_marks",
+    "number_of_equals",
+    "number_of_ampersands",
+    "number_of_percent_encoded_chars",
+    "number_of_digits",
+    "digit_ratio",
+    "special_character_count",
+    "subdomain_count",
+    "hostname_entropy",
+    "path_entropy",
+    "query_entropy",
+    "ip_address_hostname",
+    "punycode_indicator",
+    "suspicious_tld_indicator",
+    "https_indicator",
+    "port_present",
+    "unusual_port_indicator",
+    "url_shortener_indicator"
+  ],
+  "training_samples": 1307,
+  "test_samples": 614,
+  "training_timestamp": "2026-10-03T11:27:23.410671+00:00",
+  "hyperparameters": {
+    "isolation_forest": {
+      "n_estimators": 100,
+      "contamination": 0.15,
+      "random_state": 42
+    },
+    "xgboost": {
+      "n_estimators": 80,
+      "max_depth": 4,
+      "learning_rate": 0.08,
+      "scale_pos_weight": 0.9683734939759037,
+      "random_state": 42
+    }
+  },
+  "leakage_checks": {
+    "domain_overlap": 0,
+    "exact_url_deduplication": true,
+    "zero_target_derived_features": true
+  },
+  "invariants": {
+    "zero_retraining_in_production": true,
+    "zero_fake_feature_imputation": true,
+    "strict_27_feature_schema": true,
+    "tenant_isolated": true,
+    "real_vs_simulation_separation": true
+  }
+}

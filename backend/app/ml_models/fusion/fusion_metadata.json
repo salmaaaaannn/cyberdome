@@ -1,0 +1,35 @@
+{
+  "module": "multi_model_detection_fusion",
+  "model_version": "fusion-v1",
+  "engine_type": "Deterministic Multi-Source Evidence Fusion",
+  "learned_model_status": "NOT_APPLICABLE",
+  "rationale_for_deterministic_fusion": "Cross-domain telemetry (CIC-IDS2017 network flows, CICIoT2023 flows, CERT insider threat host activity, and PhishTank URLs) originate from distinct empirical benchmarks without a legitimate paired ground-truth dataset in enterprise production. Synthesizing arbitrary paired labels would violate zero-fake-data invariants. The deterministic evidence fusion architecture delivers 100% explainability, zero label leakage, and robust Bayesian evidence accumulation.",
+  "sources_supported": [
+    "NETWORK",
+    "IOT",
+    "UEBA",
+    "URL",
+    "THREAT_INTELLIGENCE",
+    "WEB_SCANNER",
+    "SECURITY_RULE"
+  ],
+  "verdict_cardinality": 6,
+  "verdicts": [
+    "BENIGN",
+    "LOW_CONFIDENCE",
+    "SUSPICIOUS",
+    "HIGH_CONFIDENCE_THREAT",
+    "CRITICAL_THREAT",
+    "UNKNOWN"
+  ],
+  "invariants": {
+    "zero_fake_feature_imputation": true,
+    "missing_models_marked_unavailable": true,
+    "missing_evidence_never_coerced_to_benign": true,
+    "tenant_isolated": true,
+    "real_vs_simulation_separation": true,
+    "idempotent_event_processing": true,
+    "immutable_audit_logging": true
+  },
+  "created_at": "2026-10-03T17:15:00.000Z"
+}

@@ -1,0 +1,91 @@
+{
+  "companies": [
+    {"id": "c-alpha-777", "name": "Alpha Corp", "domain": "alpha.local"},
+    {"id": "c-beta-888", "name": "Beta Inc", "domain": "beta.local"}
+  ],
+  "users": [
+    {"id": "u-admin-1", "email": "admin@alpha.local", "name": "Alpha Admin", "role": "ADMIN", "company_id": "c-alpha-777"},
+    {"id": "u-analyst-1", "email": "analyst@alpha.local", "name": "Alpha Analyst", "role": "ANALYST", "company_id": "c-alpha-777"},
+    {"id": "u-user-1", "email": "user@alpha.local", "name": "Alpha User", "role": "USER", "company_id": "c-alpha-777"}
+  ],
+  "playbooks": [
+    {
+      "id": "pb-low-1",
+      "company_id": "c-alpha-777",
+      "name": "Auto Tag Incident",
+      "trigger": "INCIDENT_CREATED",
+      "is_active": true,
+      "steps": [
+        {"id": "step1", "action": "tag_incident", "target_type": "incident"}
+      ]
+    },
+    {
+      "id": "pb-high-1",
+      "company_id": "c-alpha-777",
+      "name": "Isolate Compromised Device",
+      "trigger": "DEVICE_COMPROMISED",
+      "is_active": true,
+      "steps": [
+        {"id": "step1", "action": "isolate_device", "target_type": "device"}
+      ]
+    },
+    {
+      "id": "pb-crit-1",
+      "company_id": "c-alpha-777",
+      "name": "Global Lockdown",
+      "trigger": "RANSOMWARE_DETECTED",
+      "is_active": true,
+      "steps": [
+        {"id": "step1", "action": "initiate_lockdown", "target_type": "company"}
+      ]
+    },
+    {
+      "id": "pb-inactive",
+      "company_id": "c-alpha-777",
+      "name": "Inactive Playbook",
+      "trigger": "ANY",
+      "is_active": false,
+      "steps": []
+    },
+    {
+      "id": "pb-cross",
+      "company_id": "c-beta-888",
+      "name": "Beta Isolate",
+      "trigger": "DEVICE_COMPROMISED",
+      "is_active": true,
+      "steps": [
+         {"id": "step1", "action": "isolate_device", "target_type": "device"}
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "inc-1",
+      "company_id": "c-alpha-777",
+      "title": "Suspicious Login",
+      "status": "OPEN",
+      "environment": "REAL"
+    },
+    {
+      "id": "inc-sim-1",
+      "company_id": "c-alpha-777",
+      "title": "Simulated Ransomware",
+      "status": "OPEN",
+      "environment": "SIMULATION"
+    }
+  ],
+  "devices": [
+    {
+      "id": "dev-1",
+      "company_id": "c-alpha-777",
+      "hostname": "alpha-wkst-01",
+      "status": "ONLINE"
+    },
+    {
+      "id": "dev-2-beta",
+      "company_id": "c-beta-888",
+      "hostname": "beta-wkst-01",
+      "status": "ONLINE"
+    }
+  ]
+}

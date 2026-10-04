@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "CYBERDOME Security Assessment",
+  "version": "1.1",
+  "description": "Passive automatic website security assessment, reputation evaluation, and TLS/header verification.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CYBERDOME Security Assessment",
+    "default_icon": {
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

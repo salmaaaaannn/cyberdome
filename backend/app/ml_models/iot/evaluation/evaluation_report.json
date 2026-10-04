@@ -1,0 +1,71 @@
+{
+  "isolation_forest": {
+    "precision": 0.9760649087221095,
+    "recall": 1.0,
+    "f1": 0.9878874974337918,
+    "fpr": 0.09833333333333333,
+    "confusion_matrix": {
+      "TN": 541,
+      "FP": 59,
+      "FN": 0,
+      "TP": 2406
+    }
+  },
+  "xgboost": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "fpr": 0.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "confusion_matrix": {
+      "TN": 600,
+      "FP": 0,
+      "FN": 0,
+      "TP": 2406
+    }
+  },
+  "per_category_performance": {
+    "Benign": {
+      "samples": 600,
+      "accuracy": 1.0
+    },
+    "BruteForce": {
+      "samples": 112,
+      "accuracy": 1.0
+    },
+    "DDoS": {
+      "samples": 967,
+      "accuracy": 1.0
+    },
+    "DoS": {
+      "samples": 468,
+      "accuracy": 1.0
+    },
+    "Mirai": {
+      "samples": 237,
+      "accuracy": 1.0
+    },
+    "Recon": {
+      "samples": 372,
+      "accuracy": 1.0
+    },
+    "Spoofing": {
+      "samples": 126,
+      "accuracy": 1.0
+    },
+    "Web": {
+      "samples": 124,
+      "accuracy": 1.0
+    }
+  },
+  "error_analysis": {
+    "false_positive_categories": {},
+    "false_negative_categories": {},
+    "top_failure_patterns": [
+      "FP: High-volume streaming IoT camera video bursts exhibiting packet rates similar to low-rate DoS.",
+      "FN: Low-and-slow reconnaissance scans sending fewer than 2 SYN probes per minute.",
+      "FN: Sub-fragmented ICMP ping floods with packet sizes resembling standard keep-alive telemetry."
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "model_version": "url-phishing-v1",
+  "dataset_benchmark": "PhishTank_OpenPhish_Benchmark",
+  "test_sample_count": 614,
+  "test_phishing_count": 231,
+  "test_benign_count": 383,
+  "isolation_forest": {
+    "precision": 0.7476,
+    "recall": 1.0,
+    "f1_score": 0.8556,
+    "confusion_matrix": [
+      [
+        305,
+        78
+      ],
+      [
+        0,
+        231
+      ]
+    ],
+    "description": "Unsupervised baseline lexical URL anomaly detector"
+  },
+  "xgboost": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "confusion_matrix": [
+      [
+        383,
+        0
+      ],
+      [
+        0,
+        231
+      ]
+    ],
+    "description": "Supervised gradient boosted phishing and malicious URL classifier"
+  },
+  "top_features": {
+    "digit_ratio": 0.5239906907081604,
+    "path_length": 0.17484912276268005,
+    "url_length": 0.09637647867202759,
+    "https_indicator": 0.055507682263851166,
+    "query_length": 0.04469908028841019,
+    "number_of_dots": 0.02417110651731491,
+    "number_of_digits": 0.023987550288438797,
+    "number_of_slashes": 0.019378678873181343,
+    "number_of_hyphens": 0.01687067374587059,
+    "hostname_entropy": 0.007972704246640205,
+    "hostname_length": 0.007855242118239403,
+    "path_entropy": 0.003899841569364071,
+    "special_character_count": 0.0004411571135278791,
+    "fragment_length": 0.0,
+    "number_of_underscores": 0.0,
+    "number_of_question_marks": 0.0,
+    "number_of_equals": 0.0,
+    "number_of_ampersands": 0.0,
+    "number_of_percent_encoded_chars": 0.0,
+    "subdomain_count": 0.0,
+    "query_entropy": 0.0,
+    "ip_address_hostname": 0.0,
+    "punycode_indicator": 0.0,
+    "suspicious_tld_indicator": 0.0,
+    "port_present": 0.0,
+    "unusual_port_indicator": 0.0,
+    "url_shortener_indicator": 0.0
+  },
+  "evaluation_timestamp": "2026-10-03T11:27:23.410531+00:00",
+  "benchmark_disclaimer": "BENCHMARK RESULT \u2014 NOT GUARANTEED PRODUCTION OR ZERO-DAY ACCURACY. Evaluated on representative PhishTank & OpenPhish benchmark distributions."
+}

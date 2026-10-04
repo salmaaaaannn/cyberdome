@@ -1,0 +1,123 @@
+{
+  "rule_version": "fusion-v1",
+  "rule_engine": "CYBERDOME Deterministic Evidence Fusion",
+  "decision_precedence": [
+    {
+      "priority": 1,
+      "rule_id": "FUSION-RULE-001-THREAT-INTEL",
+      "name": "Authoritative Threat Intelligence Precedence",
+      "condition": "THREAT_INTELLIGENCE.is_known_malicious == true",
+      "outcome": {
+        "verdict": "CRITICAL_THREAT",
+        "severity": "CRITICAL",
+        "base_confidence": 0.98,
+        "reason_code": "AUTHORITATIVE_THREAT_INTEL_MATCH"
+      }
+    },
+    {
+      "priority": 2,
+      "rule_id": "FUSION-RULE-002-FOUR-SOURCE-ATTACK",
+      "name": "Four-Source Multi-Model Coordinated Attack",
+      "condition": "threat_sources_count >= 4",
+      "outcome": {
+        "verdict": "CRITICAL_THREAT",
+        "severity": "CRITICAL",
+        "base_confidence": 0.96,
+        "reason_code": "FOUR_SOURCE_COORDINATED_ATTACK"
+      }
+    },
+    {
+      "priority": 3,
+      "rule_id": "FUSION-RULE-003-THREE-SOURCE-THREAT",
+      "name": "Three-Source Multi-Model Corroborated Threat",
+      "condition": "threat_sources_count == 3",
+      "outcome": {
+        "verdict": "HIGH_CONFIDENCE_THREAT",
+        "severity": "CRITICAL_IF_ANY_CRITICAL_ELSE_HIGH",
+        "base_confidence": 0.92,
+        "reason_code": "THREE_SOURCE_CORROBORATED_THREAT"
+      }
+    },
+    {
+      "priority": 4,
+      "rule_id": "FUSION-RULE-004-TWO-SOURCE-CORROBORATION",
+      "name": "Two-Source Cross-Domain Corroborated Threat",
+      "condition": "threat_sources_count == 2",
+      "outcome": {
+        "verdict": "HIGH_CONFIDENCE_THREAT",
+        "severity": "HIGH",
+        "base_confidence": 0.86,
+        "reason_code": "TWO_SOURCE_CORROBORATED_THREAT"
+      }
+    },
+    {
+      "priority": 5,
+      "rule_id": "FUSION-RULE-005-RULE-CORROBORATED-SINGLE-SOURCE",
+      "name": "Security Rule or Scanner Corroborated Single Source",
+      "condition": "threat_sources_count == 1 and (has_security_rule or has_scanner_threat)",
+      "outcome": {
+        "verdict": "HIGH_CONFIDENCE_THREAT",
+        "severity": "HIGH",
+        "base_confidence": 0.82,
+        "reason_code": "RULE_CORROBORATED_SINGLE_SOURCE"
+      }
+    },
+    {
+      "priority": 6,
+      "rule_id": "FUSION-RULE-006-ISOLATED-HIGH-ANOMALY",
+      "name": "Isolated Single-Source Severe Anomaly",
+      "condition": "threat_sources_count == 1 and max_severity in ['HIGH', 'CRITICAL']",
+      "outcome": {
+        "verdict": "SUSPICIOUS",
+        "severity": "MEDIUM",
+        "base_confidence": 0.70,
+        "reason_code": "ISOLATED_SINGLE_SOURCE_ANOMALY"
+      }
+    },
+    {
+      "priority": 7,
+      "rule_id": "FUSION-RULE-007-ISOLATED-LOW-ANOMALY",
+      "name": "Isolated Single-Source Low/Medium Anomaly",
+      "condition": "threat_sources_count == 1 and max_severity in ['LOW', 'MEDIUM', 'INFO']",
+      "outcome": {
+        "verdict": "LOW_CONFIDENCE",
+        "severity": "LOW",
+        "base_confidence": 0.55,
+        "reason_code": "ISOLATED_LOW_SEVERITY_SIGNAL"
+      }
+    },
+    {
+      "priority": 8,
+      "rule_id": "FUSION-RULE-008-ALL-CLEAN",
+      "name": "All Evaluated Models Benign and Safe",
+      "condition": "threat_sources_count == 0 and sources_present_count > 0",
+      "outcome": {
+        "verdict": "BENIGN",
+        "severity": "INFO",
+        "base_confidence": 0.95,
+        "reason_code": "ALL_SOURCES_CLEAN"
+      }
+    },
+    {
+      "priority": 9,
+      "rule_id": "FUSION-RULE-009-INSUFFICIENT-DATA",
+      "name": "No Usable Telemetry or Missing Models",
+      "condition": "sources_present_count == 0",
+      "outcome": {
+        "verdict": "UNKNOWN",
+        "severity": "INFO",
+        "base_confidence": 0.0,
+        "reason_code": "INSUFFICIENT_EVIDENCE"
+      }
+    }
+  ],
+  "temporal_correlation": {
+    "max_window_seconds": 7200,
+    "decay_half_life_seconds": 3600
+  },
+  "entity_weights": {
+    "direct_identifier_match": 1.0,
+    "subnet_ip_match": 0.8,
+    "domain_match": 0.85
+  }
+}
