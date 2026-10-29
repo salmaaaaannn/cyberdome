@@ -98,7 +98,7 @@ export default function AdminPage() {
       {/* Header */}
       <div style={{ marginBottom: 28, display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
         <div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 9999, background: 'var(--color-critical-bg)', color: 'var(--color-critical)', fontSize: 12, fontWeight: 600, marginBottom: 8 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 9999, background: 'rgba(59, 130, 246, 0.12)', border: '1px solid rgba(59, 130, 246, 0.3)', color: '#38BDF8', fontSize: 12, fontWeight: 600, marginBottom: 8 }}>
             <Shield size={13} /> Security Operations
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.02em', margin: 0 }}>
@@ -232,8 +232,8 @@ export default function AdminPage() {
             fontSize: 14,
             fontWeight: 600,
             cursor: 'pointer',
-            borderBottom: activeTab === 'overview' ? '2.5px solid var(--color-critical)' : '2.5px solid transparent',
-            color: activeTab === 'overview' ? 'var(--text-primary)' : 'var(--text-muted)',
+            borderBottom: activeTab === 'overview' ? '2.5px solid #3B82F6' : '2.5px solid transparent',
+            color: activeTab === 'overview' ? '#3B82F6' : 'var(--text-muted)',
           }}
         >
           <LayoutDashboard size={16} />
@@ -253,8 +253,8 @@ export default function AdminPage() {
             fontSize: 14,
             fontWeight: 600,
             cursor: 'pointer',
-            borderBottom: activeTab === 'employees' ? '2.5px solid var(--color-critical)' : '2.5px solid transparent',
-            color: activeTab === 'employees' ? 'var(--text-primary)' : 'var(--text-muted)',
+            borderBottom: activeTab === 'employees' ? '2.5px solid #3B82F6' : '2.5px solid transparent',
+            color: activeTab === 'employees' ? '#3B82F6' : 'var(--text-muted)',
           }}
         >
           <Building2 size={16} />
@@ -274,8 +274,8 @@ export default function AdminPage() {
             fontSize: 14,
             fontWeight: 600,
             cursor: 'pointer',
-            borderBottom: activeTab === 'users' ? '2.5px solid var(--color-critical)' : '2.5px solid transparent',
-            color: activeTab === 'users' ? 'var(--text-primary)' : 'var(--text-muted)',
+            borderBottom: activeTab === 'users' ? '2.5px solid #3B82F6' : '2.5px solid transparent',
+            color: activeTab === 'users' ? '#3B82F6' : 'var(--text-muted)',
           }}
         >
           <Users size={16} />
@@ -298,8 +298,8 @@ export default function AdminPage() {
             fontSize: 14,
             fontWeight: 600,
             cursor: 'pointer',
-            borderBottom: activeTab === 'audit' ? '2.5px solid var(--color-critical)' : '2.5px solid transparent',
-            color: activeTab === 'audit' ? 'var(--text-primary)' : 'var(--text-muted)',
+            borderBottom: activeTab === 'audit' ? '2.5px solid #3B82F6' : '2.5px solid transparent',
+            color: activeTab === 'audit' ? '#3B82F6' : 'var(--text-muted)',
           }}
         >
           <ScrollText size={16} />
@@ -319,8 +319,8 @@ export default function AdminPage() {
             fontSize: 14,
             fontWeight: 600,
             cursor: 'pointer',
-            borderBottom: activeTab === 'system' ? '2.5px solid var(--color-critical)' : '2.5px solid transparent',
-            color: activeTab === 'system' ? 'var(--text-primary)' : 'var(--text-muted)',
+            borderBottom: activeTab === 'system' ? '2.5px solid #3B82F6' : '2.5px solid transparent',
+            color: activeTab === 'system' ? '#3B82F6' : 'var(--text-muted)',
           }}
         >
           <Settings size={16} />

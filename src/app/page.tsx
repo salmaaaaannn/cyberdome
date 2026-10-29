@@ -49,7 +49,7 @@ export default function LandingPage() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#050607', // Pure void black
+      backgroundColor: '#0B1120', // Matte Navy Bento Background
       color: '#F4F7FA',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
       position: 'relative',
@@ -62,7 +62,7 @@ export default function LandingPage() {
       <div style={{
         position: 'absolute',
         top: 0, left: 0, right: 0, height: '100vh',
-        background: 'radial-gradient(circle at center, transparent 0%, #050607 80%)',
+        background: 'radial-gradient(circle at center, transparent 0%, #0B1120 85%)',
         pointerEvents: 'none',
         zIndex: 1
       }} />
@@ -70,16 +70,16 @@ export default function LandingPage() {
       <div style={{ position: 'relative', zIndex: 10 }}>
         {/* Header matching the photo */}
         <header style={{ 
-          background: scrolled ? 'rgba(5, 6, 7, 0.9)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+          background: scrolled ? 'rgba(11, 17, 32, 0.92)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(14px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
           position: 'fixed',
           top: 0, left: 0, right: 0,
           transition: 'all 0.3s ease',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid rgba(51, 65, 85, 0.6)' : '1px solid transparent',
         }}>
           <div style={{
-            maxWidth: 1400, margin: '0 auto', padding: '20px 32px',
+            maxWidth: 1400, margin: '0 auto', padding: '18px 32px',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between'
           }}>
             {/* Logo */}
@@ -87,39 +87,40 @@ export default function LandingPage() {
               <div style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 width: 36, height: 36, borderRadius: 8,
-                background: 'rgba(255,23,68,0.1)',
-                border: '1px solid rgba(255,23,68,0.3)',
-                boxShadow: '0 0 15px rgba(255,23,68,0.2)'
+                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)',
+                border: '1px solid rgba(59, 130, 246, 0.4)',
+                boxShadow: '0 0 16px rgba(59, 130, 246, 0.3)'
               }}>
-                <Shield size={18} color="#FF1744" />
+                <Shield size={18} color="#3B82F6" />
               </div>
               <span style={{ fontSize: 20, fontWeight: 800, letterSpacing: '0.05em', fontFamily: 'Orbitron, sans-serif' }}>
                 <span style={{ color: '#F4F7FA' }}>CYBER</span>
-                <span style={{ color: '#FF1744', textShadow: '0 0 10px rgba(255,23,68,0.5)' }}>DOME</span>
+                <span style={{ color: '#3B82F6', textShadow: '0 0 12px rgba(59, 130, 246, 0.5)' }}>DOME</span>
               </span>
             </div>
             
             {/* Center Nav */}
-            <nav style={{ display: 'flex', alignItems: 'center', gap: 32, fontSize: 14, fontWeight: 500, color: '#A5AFBA' }}>
-              <Link href="#defense-grid" style={{ color: '#8AA6D6', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: 32, fontSize: 14, fontWeight: 500, color: '#94A3B8' }}>
+              <Link href="#defense-grid" style={{ color: '#38BDF8', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                 <Radar size={15} /> 3D Defense Grid
               </Link>
-              <Link href="/personal/url-check" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#F4F7FA'} onMouseLeave={e => e.currentTarget.style.color = '#A5AFBA'}>URL Check</Link>
-              <Link href="/attack-surface" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#F4F7FA'} onMouseLeave={e => e.currentTarget.style.color = '#A5AFBA'}>Attack Surface</Link>
-              <Link href="/scanner" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#F4F7FA'} onMouseLeave={e => e.currentTarget.style.color = '#A5AFBA'}>Scanner</Link>
+              <Link href="/personal/url-check" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#F4F7FA'} onMouseLeave={e => e.currentTarget.style.color = '#94A3B8'}>URL Check</Link>
+              <Link href="/attack-surface" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#F4F7FA'} onMouseLeave={e => e.currentTarget.style.color = '#94A3B8'}>Attack Surface</Link>
+              <Link href="/scanner" style={{ color: 'inherit', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#F4F7FA'} onMouseLeave={e => e.currentTarget.style.color = '#94A3B8'}>Scanner</Link>
             </nav>
 
             {/* Right Nav */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
               <Link href="/login" style={{ fontSize: 14, fontWeight: 600, color: '#F4F7FA', textDecoration: 'none' }}>Sign In</Link>
               <Link href="/signup" style={{ 
-                padding: '10px 24px', borderRadius: 6, 
-                background: '#FF1744', color: '#FFF', 
-                fontSize: 14, fontWeight: 700, textDecoration: 'none',
-                boxShadow: '0 0 20px rgba(255, 23, 68, 0.4)',
+                padding: '10px 22px', borderRadius: 8, 
+                background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)', color: '#FFF', 
+                fontSize: 13.5, fontWeight: 700, textDecoration: 'none',
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)',
+                border: '1px solid rgba(59, 130, 246, 0.6)',
                 textTransform: 'uppercase', letterSpacing: '0.05em',
-                transition: 'transform 0.2s'
-              }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+                transition: 'all 0.2s'
+              }} onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-1px)'} onMouseLeave={e => e.currentTarget.style.transform = 'none'}>
                 GET STARTED
               </Link>
             </div>
@@ -128,15 +129,15 @@ export default function LandingPage() {
 
         {/* Hero Section */}
         <section style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '0 24px' }}>
-          <div style={{ maxWidth: 800, margin: '0 auto', transform: 'translateY(-5vh)' }}>
+          <div style={{ maxWidth: 840, margin: '0 auto', transform: 'translateY(-5vh)' }}>
             <div style={{ 
               display: 'inline-flex', alignItems: 'center', gap: 8, 
               padding: '6px 20px', borderRadius: 999, 
-              background: 'rgba(255,23,68,0.05)', border: '1px solid rgba(255,23,68,0.2)',
-              color: '#FF1744', fontSize: 12, fontWeight: 600, letterSpacing: '0.1em',
+              background: 'rgba(59, 130, 246, 0.08)', border: '1px solid rgba(59, 130, 246, 0.25)',
+              color: '#38BDF8', fontSize: 12, fontWeight: 600, letterSpacing: '0.1em',
               marginBottom: 32, textTransform: 'uppercase'
             }}>
-              <Activity size={14} /> ENTERPRISE CYBERSECURITY PLATFORM
+              <Activity size={14} className="animate-pulse" /> ENTERPRISE CYBERSECURITY PLATFORM
             </div>
             
             <h1 style={{ 
@@ -145,50 +146,51 @@ export default function LandingPage() {
             }}>
               Your Network's <br />
               <span style={{ 
-                color: '#FF1744', 
-                textShadow: '0 0 40px rgba(255, 23, 68, 0.6), 0 0 80px rgba(255, 23, 68, 0.2)'
+                color: '#3B82F6', 
+                textShadow: '0 0 40px rgba(59, 130, 246, 0.5), 0 0 80px rgba(59, 130, 246, 0.2)'
               }}>
                 Silent Guardian.
               </span>
             </h1>
             
             <p style={{ 
-              fontSize: 18, color: '#A5AFBA', lineHeight: 1.6, 
-              maxWidth: 640, margin: '0 auto 48px' 
+              fontSize: 17.5, color: '#94A3B8', lineHeight: 1.6, 
+              maxWidth: 660, margin: '0 auto 48px' 
             }}>
-              Unify external attack surface mapping, vulnerability intelligence, and compliance workflows into one single pane of glass. Advanced digital defense for the modern enterprise.
+              Unify external attack surface mapping, multi-model ML threat detection, and automated SOAR response into a single pane of glass.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
               <Link href="/scanner" style={{
                 padding: '16px 36px', borderRadius: 8,
-                background: '#FF1744', color: '#FFF',
+                background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)', color: '#FFF',
                 fontSize: 15, fontWeight: 700, textDecoration: 'none',
                 display: 'inline-flex', alignItems: 'center', gap: 10,
-                boxShadow: '0 0 30px rgba(255, 23, 68, 0.3)',
+                boxShadow: '0 0 25px rgba(59, 130, 246, 0.4)',
+                border: '1px solid rgba(59, 130, 246, 0.6)',
                 textTransform: 'uppercase', letterSpacing: '0.05em',
                 transition: 'all 0.2s'
               }} onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 0 40px rgba(255, 23, 68, 0.5)';
+                e.currentTarget.style.boxShadow = '0 0 35px rgba(59, 130, 246, 0.6)';
               }} onMouseLeave={e => {
                 e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = '0 0 30px rgba(255, 23, 68, 0.3)';
+                e.currentTarget.style.boxShadow = '0 0 25px rgba(59, 130, 246, 0.4)';
               }}>
                 LAUNCH SCANNER <Crosshair size={18} />
               </Link>
               <Link href="/dashboard" style={{
                 padding: '16px 36px', borderRadius: 8,
-                background: '#11161D', color: '#F4F7FA',
+                background: '#1E293B', color: '#F4F7FA',
                 fontSize: 15, fontWeight: 600, textDecoration: 'none',
-                border: '1px solid rgba(255,255,255,0.1)',
+                border: '1px solid #334155',
                 transition: 'all 0.2s',
               }} onMouseEnter={e => {
-                e.currentTarget.style.background = '#151B23';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+                e.currentTarget.style.background = '#27354A';
+                e.currentTarget.style.borderColor = 'rgba(59, 130, 246, 0.4)';
               }} onMouseLeave={e => {
-                e.currentTarget.style.background = '#11161D';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                e.currentTarget.style.background = '#1E293B';
+                e.currentTarget.style.borderColor = '#334155';
               }}>
                 Explore Live Demo
               </Link>
@@ -200,9 +202,9 @@ export default function LandingPage() {
         <section id="defense-grid" style={{
           position: 'relative',
           padding: '60px 24px 100px',
-          background: '#0C1118',
-          borderTop: '1px solid rgba(138, 166, 214, 0.15)',
-          borderBottom: '1px solid rgba(138, 166, 214, 0.15)',
+          background: '#0F172A',
+          borderTop: '1px solid #334155',
+          borderBottom: '1px solid #334155',
           zIndex: 10
         }}>
           <div style={{ maxWidth: 1400, margin: '0 auto' }}>

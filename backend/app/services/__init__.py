@@ -335,12 +335,22 @@ async def analyze_http(url: str) -> Dict[str, Any]:
         "cross-origin-embedder-policy",
     ]
 
+    async def _on_redirect_check(response: httpx.Response):
+        if response.is_redirect:
+            location = response.headers.get("location")
+            if location:
+                resolved = response.url.join(location)
+                valid_target, _, _ = validate_target(str(resolved))
+                if not valid_target:
+                    raise ValueError(f"Blocked SSRF redirect to internal/reserved host: {resolved}")
+
     try:
         async with httpx.AsyncClient(
             follow_redirects=True,
             timeout=httpx.Timeout(15.0),
             verify=True,
-            max_redirects=10
+            max_redirects=10,
+            event_hooks={"response": [_on_redirect_check]}
         ) as client:
             response = await client.get(url)
 
@@ -1114,7 +1124,11 @@ async def run_full_scan(
         # Get HTML content for technology detection
         html_content = ""
         try:
-            async with httpx.AsyncClient(follow_redirects=True, timeout=10) as client:
+            async with httpx.AsyncClient(
+                follow_redirects=True,
+                timeout=10,
+                event_hooks={"response": [_on_redirect_check]}
+            ) as client:
                 resp = await client.get(url)
                 html_content = resp.text[:50000]  # First 50KB
         except Exception:

@@ -271,7 +271,25 @@ class URLDecisionFusion:
                 }
             }
 
-        # 5. Clean / Safe
+        # 5. Inconclusive / Insufficient Evidence handling (never assume SAFE when evidence is missing)
+        if ml_result.verdict == "UNKNOWN" or ml_result.status in ("INSUFFICIENT_DATA", "ERROR"):
+            return {
+                "final_verdict": "UNKNOWN",
+                "severity": "LOW",
+                "confidence": 0.0,
+                "primary_reason": (
+                    "Inconclusive assessment: ML evidence is insufficient, incomplete or unavailable. "
+                    "Safety cannot be verified without complete evidence."
+                ),
+                "evidence": {
+                    "threat_intelligence": threat_intel,
+                    "ml": ml_result.model_dump(),
+                    "scanner": scanner_result,
+                    "rules_triggered": security_rules or ["RULE-INSUFFICIENT-EVIDENCE"]
+                }
+            }
+
+        # 6. Clean / Safe
         return {
             "final_verdict": "SAFE",
             "severity": "INFO",

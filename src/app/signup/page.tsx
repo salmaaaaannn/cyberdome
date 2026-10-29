@@ -818,9 +818,9 @@ export default function SignupPage() {
             type="submit"
             disabled={loading}
             style={{
-              backgroundColor: 'var(--cyberx-red)',
+              background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
               color: '#FFFFFF',
-              border: 'none',
+              border: '1px solid rgba(59, 130, 246, 0.6)',
               borderRadius: 8,
               padding: '11px',
               fontSize: 14,
@@ -831,8 +831,8 @@ export default function SignupPage() {
               justifyContent: 'center',
               gap: 8,
               marginTop: 6,
-              boxShadow: '0 2px 4px rgba(220, 38, 38, 0.25)',
-              transition: 'opacity 0.15s ease',
+              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.35)',
+              transition: 'all 0.15s ease',
             }}
           >
             {loading

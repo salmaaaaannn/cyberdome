@@ -33,17 +33,17 @@ function RotatingGlobe() {
     <group>
       {/* Globe base */}
       <Sphere ref={globeRef as any} args={[2, 64, 64]}>
-        <meshStandardMaterial color="#001830" wireframe transparent opacity={0.3} emissive="#00B8FF" emissiveIntensity={0.2} />
+        <meshStandardMaterial color="#0B1120" wireframe transparent opacity={0.35} emissive="#3B82F6" emissiveIntensity={0.25} />
       </Sphere>
       
       {/* Network Nodes / Particles */}
       <Points ref={particlesRef as any} positions={particlePositions}>
-        <PointMaterial transparent color="#FF1744" size={0.03} sizeAttenuation={true} depthWrite={false} />
+        <PointMaterial transparent color="#38BDF8" size={0.035} sizeAttenuation={true} depthWrite={false} />
       </Points>
       
       {/* Core light */}
-      <pointLight color="#FF1744" intensity={2} distance={5} />
-      <ambientLight intensity={0.1} />
+      <pointLight color="#3B82F6" intensity={2.2} distance={6} />
+      <ambientLight intensity={0.15} />
     </group>
   );
 }

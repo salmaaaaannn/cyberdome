@@ -40,11 +40,11 @@ export default function CyberSafetyLogo({
           width: numericSize,
           height: numericSize,
           borderRadius: 8,
-          background: 'linear-gradient(135deg, var(--color-critical) 0%, var(--color-critical) 100%)',
+          background: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 2px 6px rgba(217, 45, 32, 0.22)',
+          boxShadow: '0 2px 10px rgba(59, 130, 246, 0.35)',
           flexShrink: 0,
         }}
       >
@@ -83,7 +83,7 @@ export default function CyberSafetyLogo({
               fontWeight: 800,
               fontSize: numericSize * 0.52,
               letterSpacing: '-0.02em',
-              color: 'var(--color-critical)',
+              color: '#3B82F6',
             }}
           >
             DOME

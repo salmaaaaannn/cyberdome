@@ -222,9 +222,10 @@ export default function JoinCompanyPage() {
                   marginTop: 10,
                   width: '100%',
                   padding: '12px',
-                  backgroundColor: 'var(--cyberx-red)',
+                  background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
+                  boxShadow: '0 2px 8px rgba(37, 99, 235, 0.35)',
                   color: '#fff',
-                  border: 'none',
+                  border: '1px solid rgba(59, 130, 246, 0.6)',
                   borderRadius: 8,
                   fontSize: 14,
                   fontWeight: 600,
@@ -234,6 +235,7 @@ export default function JoinCompanyPage() {
                   alignItems: 'center',
                   gap: 8,
                   opacity: loading ? 0.7 : 1,
+                  transition: 'all 0.15s ease',
                 }}
               >
                 {loading ? 'Verifying Passcode...' : 'Verify Access Pass'}
@@ -339,9 +341,10 @@ export default function JoinCompanyPage() {
                   marginTop: 10,
                   width: '100%',
                   padding: '12px',
-                  backgroundColor: 'var(--cyberx-red)',
+                  background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
+                  boxShadow: '0 2px 8px rgba(37, 99, 235, 0.35)',
                   color: '#fff',
-                  border: 'none',
+                  border: '1px solid rgba(59, 130, 246, 0.6)',
                   borderRadius: 8,
                   fontSize: 14,
                   fontWeight: 600,
@@ -351,6 +354,7 @@ export default function JoinCompanyPage() {
                   alignItems: 'center',
                   gap: 8,
                   opacity: loading ? 0.7 : 1,
+                  transition: 'all 0.15s ease',
                 }}
               >
                 {loading ? 'Joining...' : 'Join Company'}
