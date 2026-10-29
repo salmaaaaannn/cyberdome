@@ -28,18 +28,22 @@ export function CyberdomeLoader({
       aria-label={label}
     >
       <div className="cyberdome-loader-card">
-        {/* Top Brand Tag */}
+        {/* Top Bento Brand Tag */}
         <div className="cyberdome-loader-brand">
           <div className="brand-icon-box">
-            <Shield size={14} color="#FF1744" />
+            <Shield size={13} color="#FFFFFF" />
           </div>
           <span className="brand-title">
             <span className="brand-white">CYBER</span>
-            <span className="brand-red">DOME</span>
+            <span className="brand-blue">DOME</span>
+          </span>
+          <span className="brand-live-indicator">
+            <span className="live-dot" />
+            <span className="live-ping" />
           </span>
         </div>
 
-        {/* Radar & Holographic Shield Core */}
+        {/* Bento Radar & Holographic Shield Core */}
         <div className="cyber-radar-loader">
           {/* Sonar pulse wave ripples */}
           <div className="sonar-emitter">
@@ -48,20 +52,22 @@ export function CyberdomeLoader({
             <span className="sonar-wave sonar-wave-3" />
           </div>
 
-          {/* Radar background grid & rings (Cyberdome Red & Cyan) */}
-          <svg className="radar-grid" viewBox="0 0 120 120" fill="none">
-            <circle cx="60" cy="60" r="54" stroke="rgba(255, 23, 68, 0.28)" strokeWidth="1" strokeDasharray="3 4" />
-            <circle cx="60" cy="60" r="42" stroke="rgba(0, 217, 255, 0.25)" strokeWidth="1" />
-            <circle cx="60" cy="60" r="28" stroke="rgba(255, 23, 68, 0.3)" strokeWidth="1" strokeDasharray="2 3" />
-            <line x1="60" y1="6" x2="60" y2="114" stroke="rgba(255, 23, 68, 0.18)" strokeWidth="1" strokeDasharray="2 4" />
-            <line x1="6" y1="60" x2="114" y2="60" stroke="rgba(255, 23, 68, 0.18)" strokeWidth="1" strokeDasharray="2 4" />
-            <line x1="60" y1="4" x2="60" y2="10" stroke="#FF1744" strokeWidth="1.6" />
-            <line x1="60" y1="110" x2="60" y2="116" stroke="#FF1744" strokeWidth="1.6" />
-            <line x1="4" y1="60" x2="10" y2="60" stroke="#00D9FF" strokeWidth="1.6" />
-            <line x1="110" y1="60" x2="116" y2="60" stroke="#00D9FF" strokeWidth="1.6" />
+          {/* Radar background grid & rings (Bento Electric Blue & Cyan) */}
+          <svg className="radar-grid" viewBox="0 0 130 130" fill="none">
+            <circle cx="65" cy="65" r="58" stroke="rgba(59, 130, 246, 0.28)" strokeWidth="1" strokeDasharray="3 4" />
+            <circle cx="65" cy="65" r="45" stroke="rgba(6, 182, 212, 0.25)" strokeWidth="1" />
+            <circle cx="65" cy="65" r="30" stroke="rgba(59, 130, 246, 0.32)" strokeWidth="1" strokeDasharray="2 3" />
+            <circle cx="65" cy="65" r="16" stroke="rgba(59, 130, 246, 0.18)" strokeWidth="1" />
+            <line x1="65" y1="7" x2="65" y2="123" stroke="rgba(59, 130, 246, 0.18)" strokeWidth="1" strokeDasharray="2 4" />
+            <line x1="7" y1="65" x2="123" y2="65" stroke="rgba(59, 130, 246, 0.18)" strokeWidth="1" strokeDasharray="2 4" />
+            {/* Precision Cardinal Ticks */}
+            <line x1="65" y1="5" x2="65" y2="11" stroke="#3B82F6" strokeWidth="1.6" />
+            <line x1="65" y1="119" x2="65" y2="125" stroke="#3B82F6" strokeWidth="1.6" />
+            <line x1="5" y1="65" x2="11" y2="65" stroke="#06B6D4" strokeWidth="1.6" />
+            <line x1="119" y1="65" x2="125" y2="65" stroke="#06B6D4" strokeWidth="1.6" />
           </svg>
 
-          {/* Sweeping Radar Scanner (Conic Crimson & Cyan beam) */}
+          {/* Sweeping Radar Scanner (Electric Blue to Cyan Conic Beam) */}
           <div className="radar-scanner">
             <div className="radar-beam" />
             <div className="radar-sweep-line" />
@@ -78,50 +84,52 @@ export function CyberdomeLoader({
 
           {/* Center Holographic Cyber Shield with Lock Core */}
           <div className="cyber-shield-container">
-            <svg className="shield-svg" viewBox="0 0 40 46" fill="none">
+            <svg className="shield-svg" viewBox="0 0 44 50" fill="none">
               <defs>
                 <linearGradient id="cyberShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#FF1744" stopOpacity="0.95" />
-                  <stop offset="50%" stopColor="#FF365C" stopOpacity="0.85" />
-                  <stop offset="100%" stopColor="#00D9FF" stopOpacity="0.95" />
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.95" />
+                  <stop offset="50%" stopColor="#2563EB" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.95" />
                 </linearGradient>
                 <radialGradient id="cyberShieldGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#FF1744" stopOpacity="0.45" />
-                  <stop offset="100%" stopColor="#FF1744" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.45" />
+                  <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
                 </radialGradient>
               </defs>
-              <circle cx="20" cy="22" r="18" fill="url(#cyberShieldGlow)" />
+              <circle cx="22" cy="24" r="20" fill="url(#cyberShieldGlow)" />
               <path
-                d="M20 3L6 8v12c0 10.5 6 18 14 21 8-3 14-10.5 14-21V8L20 3z"
+                d="M22 3L7 8.5v13c0 11.5 6.5 19.5 15 23 8.5-3.5 15-11.5 15-23V8.5L22 3z"
                 stroke="url(#cyberShieldGrad)"
                 strokeWidth="2.2"
                 strokeLinejoin="round"
-                fill="rgba(13, 17, 23, 0.88)"
+                fill="rgba(15, 23, 42, 0.92)"
               />
               <path
-                d="M20 7L9.5 11v9.5c0 8.2 4.5 14.5 10.5 17 6-2.5 10.5-8.8 10.5-17V11L20 7z"
-                stroke="rgba(0, 217, 255, 0.4)"
+                d="M22 7.5L11 11.5v10c0 9 5 15.5 11 18.5 6-3 11-9.5 11-18.5v-10L22 7.5z"
+                stroke="rgba(6, 182, 212, 0.45)"
                 strokeWidth="1"
                 fill="none"
               />
+              {/* Lock Shackle */}
               <path
-                d="M17 19v-2.5a3 3 0 016 0V19"
-                stroke="#00D9FF"
+                d="M19 21v-3a3 3 0 016 0v3"
+                stroke="#06B6D4"
                 strokeWidth="1.6"
                 strokeLinecap="round"
               />
+              {/* Lock Body */}
               <rect
-                x="15"
-                y="19"
+                x="17"
+                y="21"
                 width="10"
-                height="8"
+                height="8.5"
                 rx="2"
-                fill="#161D26"
-                stroke="#FF1744"
+                fill="#1E293B"
+                stroke="#3B82F6"
                 strokeWidth="1.4"
               />
-              <circle cx="20" cy="22.5" r="1" fill="#F8FAFC" />
-              <line x1="20" y1="23.5" x2="20" y2="25" stroke="#F8FAFC" strokeWidth="1.2" strokeLinecap="round" />
+              <circle cx="22" cy="24.5" r="1.1" fill="#F8FAFC" />
+              <line x1="22" y1="25.5" x2="22" y2="27.5" stroke="#F8FAFC" strokeWidth="1.2" strokeLinecap="round" />
             </svg>
           </div>
         </div>
@@ -138,7 +146,7 @@ export function CyberdomeLoader({
             <div className="loader-telemetry">
               {subtext.split('·').map((part, index, arr) => (
                 <React.Fragment key={index}>
-                  <span>{part.trim()}</span>
+                  <span className="telemetry-chip">{part.trim()}</span>
                   {index < arr.length - 1 && <span className="dot">·</span>}
                 </React.Fragment>
               ))}
@@ -152,7 +160,11 @@ export function CyberdomeLoader({
           display: flex;
           align-items: center;
           justify-content: center;
-          background: radial-gradient(circle at center, rgba(255, 23, 68, 0.08) 0%, rgba(7, 9, 12, 0.98) 75%), #07090C;
+          background:
+            radial-gradient(circle at center, rgba(59, 130, 246, 0.09) 0%, rgba(15, 23, 42, 0.45) 45%, rgba(11, 17, 32, 0.98) 85%),
+            radial-gradient(rgba(51, 65, 85, 0.35) 1px, transparent 1px),
+            #0B1120;
+          background-size: 100% 100%, 28px 28px, 100% 100%;
           color: #F8FAFC;
           user-select: none;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -165,78 +177,134 @@ export function CyberdomeLoader({
           height: 100vh;
           min-height: 100vh;
           z-index: 99999;
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
         }
 
         .cyberdome-loader-inline {
           position: relative;
           width: 100%;
-          min-height: 280px;
-          padding: 32px 16px;
-          border-radius: 12px;
-          border: 1px solid rgba(255, 23, 68, 0.15);
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+          min-height: 300px;
+          padding: 36px 20px;
+          border-radius: 16px;
+          background: rgba(30, 41, 59, 0.65);
+          border: 1px solid rgba(51, 65, 85, 0.7);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .cyberdome-loader-card {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 18px;
-          animation: loader-fade-in 0.4s ease-out;
+          gap: 20px;
+          padding: 36px 44px;
+          border-radius: 20px;
+          background: rgba(30, 41, 59, 0.85);
+          border: 1px solid rgba(51, 65, 85, 0.85);
+          box-shadow:
+            0 24px 50px -12px rgba(0, 0, 0, 0.75),
+            0 0 35px rgba(59, 130, 246, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          animation: loader-fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          max-width: 90vw;
         }
 
         @keyframes loader-fade-in {
           from {
             opacity: 0;
-            transform: translateY(8px);
+            transform: scale(0.96) translateY(8px);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: scale(1) translateY(0);
           }
         }
 
         .cyberdome-loader-brand {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 4px 14px;
+          gap: 9px;
+          padding: 5px 14px;
           border-radius: 9999px;
-          background: rgba(255, 23, 68, 0.08);
-          border: 1px solid rgba(255, 23, 68, 0.25);
-          box-shadow: 0 0 16px rgba(255, 23, 68, 0.15);
+          background: rgba(59, 130, 246, 0.08);
+          border: 1px solid rgba(59, 130, 246, 0.28);
+          box-shadow: 0 0 18px rgba(59, 130, 246, 0.14);
         }
 
         .brand-icon-box {
+          width: 20px;
+          height: 20px;
+          border-radius: 6px;
+          background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
           display: flex;
           align-items: center;
           justify-content: center;
+          box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
         }
 
         .brand-title {
           font-size: 11px;
           font-weight: 800;
-          letter-spacing: 0.12em;
-          font-family: 'Orbitron', 'Inter', sans-serif;
+          letter-spacing: 0.1em;
+          font-family: 'Inter', -apple-system, sans-serif;
         }
 
         .brand-white {
           color: #F8FAFC;
         }
 
-        .brand-red {
-          color: #FF1744;
-          text-shadow: 0 0 8px rgba(255, 23, 68, 0.6);
+        .brand-blue {
+          color: #3B82F6;
+          text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+        }
+
+        .brand-live-indicator {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 8px;
+          height: 8px;
+          margin-left: 2px;
+        }
+
+        .live-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #10B981;
+          box-shadow: 0 0 6px #10B981;
+        }
+
+        .live-ping {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: rgba(16, 185, 129, 0.4);
+          animation: live-ping-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes live-ping-pulse {
+          0% {
+            transform: scale(0.6);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(2.2);
+            opacity: 0;
+          }
         }
 
         .cyber-radar-loader {
           position: relative;
-          width: 120px;
-          height: 120px;
+          width: 130px;
+          height: 130px;
           display: grid;
           place-items: center;
+          margin: 6px 0;
         }
 
         .sonar-emitter {
@@ -252,8 +320,8 @@ export function CyberdomeLoader({
           width: 50px;
           height: 50px;
           border-radius: 50%;
-          border: 1px solid rgba(255, 23, 68, 0.5);
-          box-shadow: 0 0 12px rgba(255, 23, 68, 0.35);
+          border: 1px solid rgba(59, 130, 246, 0.45);
+          box-shadow: 0 0 14px rgba(59, 130, 246, 0.3);
           animation: sonar-pulse 3s cubic-bezier(0.1, 0.2, 0.4, 1) infinite;
           opacity: 0;
         }
@@ -276,10 +344,10 @@ export function CyberdomeLoader({
             opacity: 0.9;
           }
           50% {
-            opacity: 0.4;
+            opacity: 0.35;
           }
           100% {
-            transform: scale(2.2);
+            transform: scale(2.3);
             opacity: 0;
           }
         }
@@ -295,20 +363,20 @@ export function CyberdomeLoader({
           position: absolute;
           inset: 0;
           border-radius: 50%;
-          animation: radar-sweep 2.6s linear infinite;
+          animation: radar-sweep 2.4s linear infinite;
           transform-origin: center center;
           pointer-events: none;
         }
 
         .radar-beam {
           position: absolute;
-          inset: 6px;
+          inset: 7px;
           border-radius: 50%;
           background: conic-gradient(
             from 0deg at 50% 50%,
-            rgba(255, 23, 68, 0.5) 0deg,
-            rgba(0, 217, 255, 0.22) 40deg,
-            transparent 70deg,
+            rgba(59, 130, 246, 0.45) 0deg,
+            rgba(6, 182, 212, 0.22) 42deg,
+            transparent 72deg,
             transparent 360deg
           );
           mask-image: radial-gradient(circle at center, transparent 20%, black 22%);
@@ -317,13 +385,13 @@ export function CyberdomeLoader({
 
         .radar-sweep-line {
           position: absolute;
-          top: 6px;
+          top: 7px;
           left: 50%;
           width: 1.5px;
-          height: calc(50% - 6px);
-          background: linear-gradient(180deg, #FF1744 0%, rgba(255, 23, 68, 0.8) 50%, rgba(0, 217, 255, 0.5) 85%, transparent 100%);
+          height: calc(50% - 7px);
+          background: linear-gradient(180deg, #3B82F6 0%, rgba(59, 130, 246, 0.85) 50%, rgba(6, 182, 212, 0.5) 85%, transparent 100%);
           transform: translateX(-50%);
-          box-shadow: 0 0 10px #FF1744, 0 0 18px rgba(255, 23, 68, 0.7);
+          box-shadow: 0 0 10px #3B82F6, 0 0 16px rgba(6, 182, 212, 0.7);
         }
 
         @keyframes radar-sweep {
@@ -342,12 +410,12 @@ export function CyberdomeLoader({
         }
 
         .orbit-track-outer {
-          inset: 6px;
+          inset: 7px;
           animation: orbit-rotate-cw 5.5s linear infinite;
         }
 
         .orbit-track-inner {
-          inset: 18px;
+          inset: 20px;
           animation: orbit-rotate-ccw 3.8s linear infinite;
         }
 
@@ -361,18 +429,18 @@ export function CyberdomeLoader({
           left: 50%;
           width: 5px;
           height: 5px;
-          background: #FF1744;
-          box-shadow: 0 0 8px #FF1744, 0 0 14px rgba(255, 23, 68, 0.8);
+          background: #3B82F6;
+          box-shadow: 0 0 8px #3B82F6, 0 0 14px rgba(59, 130, 246, 0.85);
           transform: translate(-50%, -50%);
         }
 
         .node-2 {
           bottom: 12px;
-          right: 6px;
+          right: 7px;
           width: 4px;
           height: 4px;
-          background: #00D9FF;
-          box-shadow: 0 0 8px #00D9FF;
+          background: #06B6D4;
+          box-shadow: 0 0 8px #06B6D4;
           transform: translate(50%, 50%);
         }
 
@@ -381,8 +449,8 @@ export function CyberdomeLoader({
           left: 0;
           width: 4px;
           height: 4px;
-          background: #00E887;
-          box-shadow: 0 0 8px #00E887;
+          background: #10B981;
+          box-shadow: 0 0 8px #10B981;
           transform: translate(-50%, -50%);
         }
 
@@ -407,8 +475,8 @@ export function CyberdomeLoader({
         .cyber-shield-container {
           position: relative;
           z-index: 2;
-          width: 44px;
-          height: 50px;
+          width: 46px;
+          height: 52px;
           display: grid;
           place-items: center;
           animation: shield-glow 2.5s ease-in-out infinite alternate;
@@ -417,17 +485,17 @@ export function CyberdomeLoader({
         .shield-svg {
           width: 100%;
           height: 100%;
-          filter: drop-shadow(0 0 10px rgba(255, 23, 68, 0.5));
+          filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.55));
         }
 
         @keyframes shield-glow {
           0% {
             transform: scale(0.97);
-            filter: drop-shadow(0 0 6px rgba(255, 23, 68, 0.4));
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
           }
           100% {
             transform: scale(1.03);
-            filter: drop-shadow(0 0 16px rgba(255, 23, 68, 0.75)) drop-shadow(0 0 24px rgba(0, 217, 255, 0.4));
+            filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 24px rgba(6, 182, 212, 0.45));
           }
         }
 
@@ -435,22 +503,24 @@ export function CyberdomeLoader({
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 9px;
+          gap: 11px;
+          width: 100%;
         }
 
         .loader-label {
-          font-family: 'JetBrains Mono', 'Orbitron', monospace;
+          font-family: 'JetBrains Mono', monospace;
           font-size: 11.5px;
           font-weight: 600;
-          letter-spacing: 2.2px;
+          letter-spacing: 2px;
           color: #F8FAFC;
-          text-shadow: 0 0 12px rgba(255, 23, 68, 0.6);
+          text-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
           animation: label-pulse 2s ease-in-out infinite alternate;
+          text-align: center;
         }
 
         @keyframes label-pulse {
           0% {
-            opacity: 0.8;
+            opacity: 0.82;
           }
           100% {
             opacity: 1;
@@ -458,10 +528,10 @@ export function CyberdomeLoader({
         }
 
         .loader-progress-track {
-          width: 190px;
-          height: 3px;
-          background: rgba(255, 23, 68, 0.1);
-          border: 1px solid rgba(255, 23, 68, 0.3);
+          width: 220px;
+          height: 4px;
+          background: rgba(15, 23, 42, 0.8);
+          border: 1px solid rgba(51, 65, 85, 0.7);
           border-radius: 9999px;
           overflow: hidden;
           position: relative;
@@ -473,10 +543,10 @@ export function CyberdomeLoader({
           left: 0;
           width: 45%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, #FF1744 40%, #00D9FF 80%, #FFFFFF 100%);
+          background: linear-gradient(90deg, transparent, #3B82F6 40%, #06B6D4 80%, #FFFFFF 100%);
           border-radius: 9999px;
-          box-shadow: 0 0 10px #FF1744, 0 0 16px rgba(0, 217, 255, 0.6);
-          animation: scanner-bar 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          box-shadow: 0 0 12px #3B82F6, 0 0 18px rgba(6, 182, 212, 0.6);
+          animation: scanner-bar 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
 
         @keyframes scanner-bar {
@@ -490,16 +560,29 @@ export function CyberdomeLoader({
 
         .loader-telemetry {
           display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
           align-items: center;
           gap: 6px;
           font-family: 'JetBrains Mono', monospace;
-          font-size: 9px;
-          letter-spacing: 1.2px;
+          font-size: 9.5px;
+          letter-spacing: 1px;
+          color: #94A3B8;
+          max-width: 360px;
+          text-align: center;
+        }
+
+        .telemetry-chip {
+          display: inline-block;
+          padding: 2px 6px;
+          background: rgba(15, 23, 42, 0.5);
+          border: 1px solid rgba(51, 65, 85, 0.4);
+          border-radius: 4px;
           color: #94A3B8;
         }
 
         .loader-telemetry .dot {
-          color: #FF1744;
+          color: #10B981;
           font-weight: bold;
         }
       `}</style>
