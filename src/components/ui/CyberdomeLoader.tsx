@@ -71,12 +71,18 @@ export function CyberdomeLoader({
       >
         {/* Top Bento Brand Tag */}
         <div className="cyberdome-loader-brand">
-          <div className="cd-brand-icon-box">
-            <Shield size={12} color="#FFFFFF" strokeWidth={2.4} />
+          <div className="cd-brand-icon-box" style={{ overflow: 'hidden', padding: 0, position: 'relative' }}>
+            <img
+              src="/cyberdome-emblem.png"
+              alt="CyberDome Emblem"
+              width={20}
+              height={20}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
           <span className="cd-brand-title">
-            <span className="cd-brand-white">CYBER</span>
-            <span className="cd-brand-blue">DOME</span>
+            <span className="cd-brand-white">Cyber</span>
+            <span className="cd-brand-blue">Dome</span>
           </span>
           <span className="cd-brand-live">
             <span className="cd-live-dot" />

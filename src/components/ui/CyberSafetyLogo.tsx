@@ -2,104 +2,150 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CyberSafetyLogoProps {
   size?: number | 'sm' | 'md' | 'lg' | 'xl';
   showSubtitle?: boolean;
   className?: string;
   href?: string;
+  variant?: 'hybrid' | 'banner';
 }
 
 export default function CyberSafetyLogo({
-  size = 32,
+  size = 36,
   showSubtitle = true,
   className = '',
   href = '/',
+  variant = 'hybrid',
 }: CyberSafetyLogoProps) {
   const numericSize =
     typeof size === 'number'
       ? size
       : size === 'sm'
-      ? 24
+      ? 26
       : size === 'md'
-      ? 32
+      ? 36
       : size === 'lg'
-      ? 40
+      ? 48
       : size === 'xl'
-      ? 52
-      : 32;
+      ? 64
+      : 36;
 
+  // Banner variant renders the full glowing geodesic dome graphic
+  if (variant === 'banner') {
+    const bannerW = numericSize * 3.4;
+    const bannerH = numericSize;
+    const bannerContent = (
+      <div
+        className={`inline-flex items-center select-none ${className}`}
+        style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}
+      >
+        <Image
+          src="/cyberdome-logo.png"
+          alt="CyberDome Logo"
+          width={bannerW}
+          height={bannerH}
+          priority
+          style={{
+            height: numericSize,
+            width: 'auto',
+            objectFit: 'contain',
+            filter: 'drop-shadow(0 4px 16px rgba(59, 130, 246, 0.35))',
+          }}
+        />
+      </div>
+    );
+
+    if (href) {
+      return (
+        <Link href={href} style={{ textDecoration: 'none', display: 'inline-flex' }}>
+          {bannerContent}
+        </Link>
+      );
+    }
+    return bannerContent;
+  }
+
+  // Standard hybrid variant (Glowing Geodesic Emblem + CyberDome Typography)
   const content = (
     <div
       className={`inline-flex items-center gap-3 select-none ${className}`}
-      style={{ display: 'inline-flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}
+      style={{ display: 'inline-flex', alignItems: 'center', gap: 11, textDecoration: 'none' }}
     >
-      {/* Precision Security Shield */}
+      {/* Geodesic Cyber Dome Glowing Shield Emblem */}
       <div
         style={{
           width: numericSize,
           height: numericSize,
-          borderRadius: 8,
-          background: 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%)',
+          borderRadius: Math.max(7, Math.round(numericSize * 0.22)),
+          position: 'relative',
+          overflow: 'hidden',
+          background: 'radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.4) 0%, rgba(11, 17, 32, 0.95) 85%)',
+          border: '1px solid rgba(59, 130, 246, 0.45)',
+          boxShadow: '0 2px 14px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 2px 10px rgba(59, 130, 246, 0.35)',
           flexShrink: 0,
         }}
       >
-        <svg
-          width={numericSize * 0.62}
-          height={numericSize * 0.62}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#FFFFFF"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          <path d="m9 12 2 2 4-4" />
-        </svg>
+        <Image
+          src="/cyberdome-emblem.png"
+          alt="CyberDome Emblem"
+          width={numericSize * 1.5}
+          height={numericSize * 1.5}
+          priority
+          style={{
+            width: '110%',
+            height: '110%',
+            objectFit: 'cover',
+            objectPosition: 'center 30%',
+          }}
+        />
       </div>
 
       {/* Typography */}
-      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.12 }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 3.5 }}>
           <span
             style={{
-              fontFamily: 'Inter, -apple-system, sans-serif',
+              fontFamily: "'Orbitron', 'Inter', -apple-system, sans-serif",
               fontWeight: 800,
               fontSize: numericSize * 0.52,
-              letterSpacing: '-0.02em',
-              color: 'var(--text-primary)',
+              letterSpacing: '-0.01em',
+              color: '#F8FAFC',
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
             }}
           >
-            CYBER
+            Cyber
           </span>
           <span
             style={{
-              fontFamily: 'Inter, -apple-system, sans-serif',
+              fontFamily: "'Orbitron', 'Inter', -apple-system, sans-serif",
               fontWeight: 800,
               fontSize: numericSize * 0.52,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.01em',
               color: '#3B82F6',
+              textShadow: '0 0 14px rgba(59, 130, 246, 0.65)',
             }}
           >
-            DOME
+            Dome
           </span>
         </div>
         {showSubtitle && (
           <span
             style={{
-              fontSize: 10,
+              fontSize: 9.5,
               fontWeight: 500,
-              color: 'var(--text-muted)',
-              letterSpacing: '0.02em',
-              marginTop: 1,
+              color: '#94A3B8',
+              letterSpacing: '0.04em',
+              marginTop: 1.5,
+              textTransform: 'uppercase',
+              fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            Your Network's Silent Guardian.
+            Silent Network Guardian
           </span>
         )}
       </div>
